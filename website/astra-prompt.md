@@ -30,7 +30,7 @@ This prompt fixes everything on the site. The off-site checklist at the end does
 - **H1s:**
   - Several pages have two H1s; the ground show repeats "THE GROUND SHOW".
   - On confirmed aircraft, a 15px disclaimer line is tagged as an H1.
-- **Ticket types:** The T&Cs list a "By the Biplanes" ticket that appears nowhere else.
+- **Ticket types:** The T&Cs list a "By the Biplanes" ticket that isn't sold. Remove it.
 - **Legal:** The T&Cs don't show the company number or registered office. UK company websites must show both (see PART 7).
 - **robots.txt:** Allows everything, including AI crawlers, and has a sitemap. Good, keep it.
 - **2026 aircraft pages:** There are 10 CMS pages (Spitfire N3200, Seafire XVII, Sabre and others). They're indexed and probably have inbound links. Keep them all. Re-label them as the 2026 archive (PART 5).
@@ -53,7 +53,7 @@ FACTS. Use these exactly. Never invent aircraft, acts, prices, quotes, reviews o
 - Venue: Headcorn Aerodrome (historically Lashenden), Shenley Road, Headcorn, Ashford, Kent TN27 9HX. Near Maidstone and Ashford.
 - Hours:
   - Gates and car parks open 9am.
-  - Show 10am to [CONFIRM 5pm or 6pm].
+  - Show 10am to 6pm.
   - Flying from about noon.
 - Tickets:
   - General Admission from £30.
@@ -61,7 +61,7 @@ FACTS. Use these exactly. Never invent aircraft, acts, prices, quotes, reviews o
   - Fighter Row (flightline seats) from £75.
   - Mustang Lounge (VIP hospitality) from £140.
   - Futures & Arrivals Day £7.50, free for veterans.
-  - [CONFIRM family and weekend prices, and By the Biplanes].
+  - [CONFIRM family and weekend prices].
   - Carer tickets are at the child rate, for one carer per disabled visitor.
 - Every ticket is an e-ticket, issued instantly. Advance tickets only. There are no sales on the gate.
 - The 2026 show had 4 Hurricanes, 30+ aircraft from 18 operators across four countries, 20+ WWII veterans, and an RAF Chinook for Armed Forces Day.
@@ -192,7 +192,7 @@ Search phrases to use naturally across the site, at most once or twice each per 
    - 9am car parks open
    - 10am gates open and the ground show starts
    - noon flying begins
-   - [CONFIRM] show closes
+   - 6pm show closes
    - Each step has a photo from the image pack.
 
    It answers the question everyone has before they buy: "what does the day look like?"
@@ -273,7 +273,7 @@ Search phrases to use naturally across the site, at most once or twice each per 
    - Turn on Framer's cookie banner, or use a consent tool with Google Consent Mode v2. Without Consent Mode, Google Ads loses conversion data.
 4. **Terms & conditions.**
    - Update the year.
-   - Make the ticket types match what's on sale. Remove "By the Biplanes" if it isn't sold. [CONFIRM]
+   - Make the ticket types match what's on sale: remove "By the Biplanes", which isn't sold.
    - Add the weather and cancellation wording. [CONFIRM]
 5. **Accessibility.** Run these checks (they help Google too):
    - Text contrast is at least 4.5:1 on every image overlay.
@@ -349,7 +349,7 @@ Use one block per page, as shown. Replace the `[CONFIRM]` values first, and repl
   "name": "Headcorn International Airshow 2027",
   "description": "A WW2 warbird airshow at Headcorn Aerodrome, Kent: flying displays, a ground show of wartime vehicles and re-enactors, food and trade stands. Children 5 and under go free.",
   "startDate": "2027-06-26T10:00:00+01:00",
-  "endDate": "2027-06-27T[CONFIRM 17 or 18]:00:00+01:00",
+  "endDate": "2027-06-27T18:00:00+01:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": { "@id": "https://headcornairshow.com/#venue" },
@@ -475,3 +475,60 @@ These are not for Astra. Do them yourself:
 - [ ] The mobile hero, sticky bar and ticket finder work on a 390px phone.
 - [ ] PageSpeed Insights mobile score is above 80 on home and /tickets.
 - [ ] Analytics and the Meta Pixel do not fire before cookie consent.
+
+---
+
+## PART 8: Replace the flat "LAST JUNE" and "WHAT'S NEXT" sections (international look)
+
+See `website/mockups/international-mobile.png` and `international-desktop.png` for the target. The working code is in `international.html`. Build it natively in Framer so the text stays crawlable. Remove the current white "LAST JUNE" stats block and the "WHAT'S NEXT" panel, and put these in their place, full width with no white margins:
+
+1. **Welcome ticker.**
+   - A red (#D40F0F) strip, 44px tall, scrolling slowly right to left in a loop.
+   - Words, in white bold condensed capitals with a small plane icon between each: WELCOME · BIENVENUE · WILLKOMMEN · WELKOM · BENVENUTI · VELKOMMEN · WITAMY · BIENVENIDOS · HEADCORN · 26-27 JUNE 2027.
+   - Mark it aria-hidden.
+2. **Arrivals board** (replaces the stats wall).
+   - **Background:** very dark navy (#050A24), with a faint 80px grid and a huge outlined "EGKH" (Headcorn's airfield code) at 6% opacity behind.
+   - **Small caps label:** "HEADCORN AERODROME · EGKH · ARRIVALS".
+   - **H2:** "LAST JUNE." in white, then "ONE FIELD IN KENT." in red, very large.
+   - **Right-hand label:** "NEXT ARRIVALS" with "26 JUN 2027" in a monospace font (JetBrains Mono), amber.
+   - **The board:** an airport arrivals board with the columns FLIGHT / ARRIVAL / STATUS.
+     - The ARRIVAL text is split-flap tiles: one dark tile per letter, with a thin hinge line across the middle.
+     - When the board scrolls into view, each tile spins through random letters for about a second and lands on the real text, left to right.
+     - Turn the spin off for prefers-reduced-motion.
+     - Rows:
+       - HIA 26 · 4 HURRICANES · LANDED (grey outline)
+       - HIA 26 · 30+ AIRCRAFT · LANDED
+       - HIA 26 · 18 OPERATORS · LANDED
+       - HIA 26 · 20+ VETERANS · LANDED
+       - HIA 27 · THE THEME · CLASSIFIED (solid red)
+       - HIA 27 · HEADLINERS · NEW YEAR (amber outline)
+       - HIA 27 · MORE NATIONS · INBOUND (red outline with a blinking red dot)
+     - The 2027 rows have amber letters.
+   - **On mobile:** hide the header row, put FLIGHT and STATUS on one line, and put the tiles full width beneath.
+   - **Line under the board:** "2026: operators from four countries. An RAF Chinook for Armed Forces Day." On the right: "2027 GOES BIGGER."
+   - Make the board a CMS collection ("Arrivals", with the fields flight, text, status and style). Then each announcement in the new year is just a change of status from CLASSIFIED to the act's name.
+3. **Radar** (replaces "WHAT'S NEXT").
+   - Navy (#0A1543) section in two columns, stacked on mobile.
+   - **Left: a circular radar.**
+     - `headcorn-from-the-air-busy-day.jpg`, cropped to a circle and darkened towards the edge.
+     - Thin white range rings and crosshairs at 20% opacity.
+     - A red sweep rotating every 5 seconds.
+     - A white diamond in the centre for Headcorn.
+     - Three pulsing red blips, each labelled in monospace on a dark tag: "THE THEME / CLASSIFIED", "HEADLINE ACTS / NEW YEAR", "NATIONS / INBOUND".
+     - Text at the bottom: "51°09'N 000°38'E · HEADCORN".
+   - **Right: the copy.**
+     - Small caps "WHAT'S NEXT".
+     - H2 "ON THE RADAR FOR 2027.", with 2027 in red.
+     - The line "A bigger show. More nations inbound. The theme stays classified, and the headline acts land in the new year. Get the news before anyone else."
+4. **Boarding pass sign-up** (replaces the current sign-up form). A white ticket card with rounded corners and two half-circle notches cut where a dashed tear line separates the stub.
+   - **Main part:**
+     - "BOARDING PASS", with "HIA 27" in red.
+     - A route: FROM "ANYWHERE" ···✈··· TO "EGKH".
+     - Monospace fields: DATE 26 JUN 27 · SHOW 10:00 · FLYING 12:00 · CLASS FIRST TO KNOW.
+     - The email field and a full-width red "GET ON THE LIST" button.
+     - The SMS tick box: "Text me show news and on-the-day updates too."
+   - **Stub:** "SEAT / YOURS" and a barcode pattern.
+   - Keep the existing Mailchimp connection and fields.
+5. **End** with the red "TICKETS ON SALE NOW." band from PART 2.
+
+Amber (#FFC23D) appears only on the arrivals board, because departure boards are amber. If you want red as the only accent everywhere, make those letters white instead.
