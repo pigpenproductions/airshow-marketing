@@ -134,14 +134,14 @@ function priceList(b) {
   );
 }
 
-function button(label, href) {
+function button(label, href, { bg = C.red, fg = C.white, cls = 'btn' } = {}) {
   const width = 64 + label.length * 9 + 56;
   return `<!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${href}" style="height:52px;v-text-anchor:middle;width:${width}px;" arcsize="50%" stroke="f" fillcolor="${C.red}">
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${href}" style="height:52px;v-text-anchor:middle;width:${width}px;" arcsize="50%" stroke="f" fillcolor="${bg}">
 <w:anchorlock/>
-<center style="color:${C.white};font-family:Arial,sans-serif;font-size:17px;font-weight:bold;">${label}&nbsp;&nbsp;&#8594;</center>
+<center style="color:${fg};font-family:Arial,sans-serif;font-size:17px;font-weight:bold;">${label}&nbsp;&nbsp;&#8594;</center>
 </v:roundrect>
-<![endif]--><!--[if !mso]><!-- --><a class="btn" href="${href}" target="_blank" style="display:inline-block;background-color:${C.red};border-radius:999px;padding:7px 7px 7px 26px;font-family:${FB};font-size:17px;line-height:38px;font-weight:600;color:${C.white};text-decoration:none;white-space:nowrap;-webkit-text-size-adjust:none;">${label}<span style="display:inline-block;width:38px;height:38px;margin-left:16px;border-radius:999px;background-color:${C.white};color:${C.red};font-size:18px;line-height:38px;text-align:center;vertical-align:top;">&#8594;</span></a><!--<![endif]-->`;
+<![endif]--><!--[if !mso]><!-- --><a class="${cls}" href="${href}" target="_blank" style="display:inline-block;background-color:${bg};border-radius:999px;padding:7px 7px 7px 26px;font-family:${FB};font-size:17px;line-height:38px;font-weight:600;color:${fg};text-decoration:none;white-space:nowrap;-webkit-text-size-adjust:none;">${label}<span style="display:inline-block;width:38px;height:38px;margin-left:16px;border-radius:999px;background-color:${fg};color:${bg};font-size:18px;line-height:38px;text-align:center;vertical-align:top;">&#8594;</span></a><!--<![endif]-->`;
 }
 
 function cta(b, ctx) {
@@ -175,7 +175,86 @@ function closing(b, ctx) {
   );
 }
 
-const BLOCKS = { flag, headline, intro, hero, ladder, priceList, cta, proof, closing };
+// Full-bleed cover image, edge to edge inside the card.
+function poster(b, ctx) {
+  const p = ctx.poster;
+  return `<tr><td style="padding:24px 0 0 0;"><div mc:edit="hero">
+<table ${T} width="100%" style="width:100%;"><tr><td bgcolor="#8FA6BB" style="background-color:#8FA6BB;">
+<img src="${p.src}" width="${p.w}" height="${p.h}" alt="${p.alt}" style="display:block;width:100%;max-width:${p.w}px;height:auto;border:0;outline:none;text-decoration:none;font-family:${FD};font-weight:900;font-size:44px;line-height:46px;color:${C.navy};-ms-interpolation-mode:bicubic;" />
+</td></tr></table>
+<p class="t-muted credit" style="margin:0;padding:8px ${P}px 0 ${P}px;font-family:${FB};font-size:11px;line-height:16px;color:${C.muted};">${p.credit}</p>
+</div></td></tr>`;
+}
+
+// Navy "classified" panel: label left, red redaction bar right.
+function dossier(b) {
+  const rows = b.rows
+    .map(
+      (r) => `<tr>
+<td class="dos-label" valign="middle" width="34%" style="width:34%;padding:0 12px 12px 0;font-family:${FB};font-size:13px;line-height:18px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#C9CEDD;">${r.label}</td>
+<td valign="middle" style="padding:0 0 12px 0;"><table ${T} width="100%" style="width:100%;"><tr><td class="flag" bgcolor="${C.red}" height="44" style="background-color:${C.red};height:44px;padding:0 14px;font-family:${FD};font-weight:800;font-size:15px;line-height:44px;letter-spacing:0.12em;color:${C.white};text-align:right;mso-line-height-rule:exactly;">${r.bar}</td></tr></table></td>
+</tr>`
+    )
+    .join('');
+  return row(
+    `<div mc:edit="dossier"><table ${T} width="100%" style="width:100%;"><tr><td class="panel" bgcolor="${C.navy}" style="background-color:${C.navy};border-radius:16px;padding:26px 24px 16px 24px;">
+<p style="margin:0 0 6px 0;font-family:${FB};font-size:13px;line-height:18px;font-weight:600;color:#C9CEDD;">${b.eyebrow}</p>
+<p class="dos-h" style="margin:0 0 20px 0;font-family:${FD};font-weight:900;font-size:40px;line-height:40px;color:${C.white};mso-line-height-rule:exactly;">${b.title}</p>
+<table ${T} width="100%" style="width:100%;">${rows}</table>
+<p style="margin:6px 0 10px 0;font-family:${FB};font-size:15px;line-height:22px;color:#C9CEDD;">${b.body}</p>
+</td></tr></table></div>`,
+    { pad: `34px ${P}px 0 ${P}px` }
+  );
+}
+
+// One giant figure, then a ruled list of supporting figures.
+function stats(b) {
+  const rows = b.rows
+    .map(
+      (r) => `<tr>
+<td class="b-rule t-navy stat-n" valign="baseline" width="96" style="width:96px;border-bottom:1px solid ${C.rule};padding:10px 12px 8px 0;font-family:${FD};font-weight:900;font-size:36px;line-height:38px;color:${C.navy};white-space:nowrap;mso-line-height-rule:exactly;">${r.n}</td>
+<td class="b-rule t-muted" valign="baseline" style="border-bottom:1px solid ${C.rule};padding:10px 0 8px 0;font-family:${FB};font-size:15px;line-height:22px;color:${C.muted};">${r.label}</td>
+</tr>`
+    )
+    .join('');
+  return row(
+    `<div mc:edit="proof">${eyebrow(b.eyebrow)}<table ${T} width="100%" style="width:100%;"><tr>
+<td class="proof-fig t-red" valign="top" style="padding:0 22px 0 0;font-family:${FD};font-weight:900;font-size:${b.figureSize || 170}px;line-height:${Math.round((b.figureSize || 170) * 0.82)}px;color:${C.red};white-space:nowrap;mso-line-height-rule:exactly;">${b.figure}</td>
+<td class="proof-txt" valign="bottom" style="padding:0 0 8px 0;">
+<p class="t-navy" style="margin:0;font-family:${FD};font-weight:800;font-size:34px;line-height:34px;color:${C.navy};mso-line-height-rule:exactly;">${b.lead}</p>
+</td></tr></table>
+<table ${T} width="100%" style="width:100%;margin-top:14px;"><tr><td class="b-rule" colspan="2" style="border-top:1px solid ${C.rule};font-size:0;line-height:0;">&nbsp;</td></tr>${rows}</table>
+${b.kicker ? `<p class="t-navy" style="margin:18px 0 0 0;font-family:${FB};font-size:17px;line-height:26px;font-weight:600;color:${C.navy};">${b.kicker}</p>` : ''}
+</div>`,
+    { pad: `40px ${P}px 0 ${P}px` }
+  );
+}
+
+// Full-width red band with its own white button.
+function band(b, ctx) {
+  const href = utm(ctx.links[b.link || 'tickets'], ctx.campaign, b.utmContent);
+  const second = b.secondary
+    ? `<p style="margin:16px 0 0 0;font-family:${FB};font-size:15px;line-height:22px;color:${C.white};"><a href="${utm(ctx.links[b.secondary.link], ctx.campaign, b.secondary.utmContent)}" target="_blank" style="color:${C.white};font-weight:600;text-decoration:underline;">${b.secondary.label}</a></p>`
+    : '';
+  return `<tr><td style="padding:44px 0 0 0;"><div mc:edit="band"><table ${T} width="100%" style="width:100%;"><tr><td class="band px" bgcolor="${C.red}" style="background-color:${C.red};padding:38px ${P}px 40px ${P}px;">
+<p style="margin:0 0 10px 0;font-family:${FB};font-size:13px;line-height:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:${C.white};">${b.eyebrow}</p>
+<p class="band-h" style="margin:0 0 16px 0;font-family:${FD};font-weight:900;font-size:62px;line-height:58px;color:${C.white};mso-line-height-rule:exactly;">${b.title}</p>
+${b.paragraphs.map((p) => `<p style="margin:0 0 14px 0;font-family:${FB};font-size:17px;line-height:26px;color:${C.white};">${p}</p>`).join('')}
+<div style="padding-top:10px;">${button(b.label, href, { bg: C.white, fg: C.red, cls: 'btn-inv' })}</div>
+${second}
+</td></tr></table></div></td></tr>`;
+}
+
+function signoff(b) {
+  return row(
+    `<div mc:edit="signoff">${b.lines.map((l) => `<p class="t-navy" style="margin:0 0 14px 0;font-family:${FB};font-size:17px;line-height:26px;color:${C.navy};">${l}</p>`).join('')}
+<p class="t-red" style="margin:6px 0 2px 0;font-family:${FD};font-weight:900;font-size:34px;line-height:34px;color:${C.red};mso-line-height-rule:exactly;">${b.name}</p>
+<p class="t-muted" style="margin:0;font-family:${FB};font-size:13px;line-height:18px;color:${C.muted};">${b.title}</p></div>`,
+    { pad: `36px ${P}px 0 ${P}px` }
+  );
+}
+
+const BLOCKS = { flag, headline, intro, hero, poster, ladder, priceList, cta, proof, stats, dossier, band, closing, signoff };
 
 // ---------- frame ----------
 
@@ -229,6 +308,7 @@ const HEAD_STYLES = `
   a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
   u + #body a { color:inherit; text-decoration:none; font-size:inherit; font-family:inherit; font-weight:inherit; line-height:inherit; }
   .btn:hover { background-color:#B80C0C !important; }
+  .btn-inv:hover { background-color:#F1F2F5 !important; }
 
   @media only screen and (max-width:600px) {
     .wrap { width:100% !important; }
@@ -252,6 +332,10 @@ const HEAD_STYLES = `
     .cta-aside { padding:14px 0 0 0 !important; }
     .proof-fig { font-size:${'{{PROOF_MOBILE}}'}px !important; line-height:${'{{PROOF_MOBILE_LH}}'}px !important; padding-right:16px !important; }
     .proof-txt p:first-child { font-size:25px !important; line-height:26px !important; }
+    .band-h { font-size:48px !important; line-height:46px !important; }
+    .dos-h { font-size:32px !important; line-height:32px !important; }
+    .dos-label { width:30% !important; font-size:11px !important; }
+    .flag { font-size:13px !important; }
   }
 
   @media (prefers-color-scheme: dark) {
@@ -264,6 +348,7 @@ const HEAD_STYLES = `
     .lad-top { border-top-color:#2A3460 !important; }
     .tray { background-color:#151D42 !important; border-color:#2A3460 !important; }
     .closing a { color:#FF4B45 !important; }
+    .panel { background-color:#18214A !important; }
   }
 </style>
 <style type="text/css" data-embed>
@@ -275,13 +360,14 @@ const HEAD_STYLES = `
   [data-ogsb] .bg-outer { background-color:#060A1F !important; }
   [data-ogsb] .bg-body { background-color:#0E1532 !important; }
   [data-ogsb] .tray { background-color:#151D42 !important; }
+  [data-ogsb] .panel { background-color:#18214A !important; }
 </style>`;
 
 const MSO_HEAD = `<!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <style type="text/css">
   body, table, td, p, a, span, h1 { font-family:Arial, sans-serif !important; }
-  .ff-d, .h1, .flag, .lad-now, .lad-step, .proof-fig, .head-date { font-family:Impact, 'Arial Narrow', Arial, sans-serif !important; }
+  .ff-d, .h1, .flag, .lad-now, .lad-step, .proof-fig, .head-date, .band-h, .dos-h, .stat-n { font-family:Impact, 'Arial Narrow', Arial, sans-serif !important; }
   .proof-txt p:first-child { font-family:Impact, 'Arial Narrow', Arial, sans-serif !important; }
 </style>
 <![endif]-->`;

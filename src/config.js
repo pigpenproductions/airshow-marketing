@@ -4,6 +4,7 @@
 module.exports = {
   links: {
     tickets: 'TICKET_URL',
+    gift: 'GIFT_URL',
     website: 'https://www.headcornairshow.com/',
     instagram: 'INSTAGRAM_URL',
     facebook: 'FACEBOOK_URL',
@@ -16,5 +17,6 @@ module.exports = {
     logo: '',
     'hero-tier1': '',
     'hero-premium': '',
+    'poster-reintro': '',
   },
 };

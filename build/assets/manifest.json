@@ -11,6 +11,11 @@
       "w": 552,
       "h": 368,
       "placeholder": true
+    },
+    "poster-reintro": {
+      "file": "poster-reintro.jpg",
+      "w": 600,
+      "h": 770
     }
   },
   "warnings": [

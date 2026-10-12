@@ -14,6 +14,18 @@ const BLOCKS = {
   headline: (b) => b.text.toUpperCase(),
   intro: (b) => [b.greeting === false ? null : '*|IF:FNAME|*Hi *|FNAME|*.*|ELSE:|*Hi there.*|END:IF|*', ...b.paragraphs.map(strip)].filter(Boolean).join('\n\n'),
   hero: () => null,
+  poster: () => null,
+  dossier: (b) => [b.title.toUpperCase(), ...b.rows.map((r) => `${r.label}: ${r.bar.toLowerCase()}`), b.body].join('\n'),
+  stats: (b) => [b.eyebrow.toUpperCase(), `${b.figure} ${b.lead}`, ...b.rows.map((r) => `${r.n} ${r.label}`), b.kicker ? `\n${b.kicker}` : null].filter(Boolean).join('\n'),
+  band: (b, ctx) =>
+    [
+      b.title.toUpperCase(),
+      ...b.paragraphs.map(strip),
+      `${b.label}: ${utm(ctx.links[b.link || 'tickets'], ctx.campaign, b.utmContent)}`,
+      b.secondary ? `${b.secondary.label}: ${utm(ctx.links[b.secondary.link], ctx.campaign, b.secondary.utmContent)}` : null,
+    ]
+      .filter(Boolean)
+      .join('\n\n'),
   ladder: (b) => {
     const lines = [b.title.toUpperCase(), `${b.now.label}: ${b.now.price}`];
     if (b.steps && b.steps.length) b.steps.forEach((s) => lines.push(`${s.label}: ${s.price}`));

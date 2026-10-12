@@ -45,7 +45,7 @@ function check(slug, html, text) {
     if (href.startsWith('*|')) continue;
     if (!href.includes('utm_source=mailchimp')) errors.push(`Link without UTMs: ${href}`);
   }
-  for (const ph of ['TICKET_URL', 'INSTAGRAM_URL', 'FACEBOOK_URL', 'PHOTO_CREDIT']) {
+  for (const ph of ['TICKET_URL', 'GIFT_URL', 'INSTAGRAM_URL', 'FACEBOOK_URL', 'PHOTO_CREDIT']) {
     if (html.includes(ph)) warns.push(`Placeholder still in email: ${ph}`);
   }
   for (const m of html.matchAll(/src="([^"]+)"/g)) {
@@ -60,7 +60,9 @@ function check(slug, html, text) {
 function main() {
   let failed = false;
   for (const email of emails) {
-    const ctx = { links: config.links, logo: img('logo'), hero: email.hero ? { ...img(email.hero.key), alt: email.hero.alt, credit: email.hero.credit } : null };
+    const ctx = { links: config.links, logo: img('logo'), hero: email.hero ? { ...img(email.hero.key), alt: email.hero.alt, credit: email.hero.credit } : null,
+      poster: email.poster ? { ...img(email.poster.key), alt: email.poster.alt, credit: email.poster.credit } : null,
+    };
 
     const raw = render(email, ctx);
     const html = juice(raw, { preserveMediaQueries: true, preserveFontFaces: true, applyWidthAttributes: false, applyHeightAttributes: false, removeStyleTags: true });

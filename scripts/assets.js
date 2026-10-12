@@ -7,6 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const { launch } = require('./browser');
+const { makePoster } = require('./poster');
 const emails = require('../src/emails');
 
 const ROOT = path.join(__dirname, '..');
@@ -95,6 +96,15 @@ async function main() {
       );
       manifest[h.key] = { file, w: HERO_W, h: H, placeholder: true };
     }
+  }
+
+  // ---- cover posters ----
+  for (const email of emails) {
+    const p = email.poster;
+    if (!p) continue;
+    const file = `${p.key}.jpg`;
+    const d = await makePoster(page, p, path.join(OUT, file));
+    manifest[p.key] = { file, w: d.w, h: d.h };
   }
 
   await browser.close();
