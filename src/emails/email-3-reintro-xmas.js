@@ -65,7 +65,6 @@ module.exports = {
       key: 'intro',
       eyebrow: '25-27 June 2027 / Headcorn Aerodrome, Kent',
       title: 'Bigger show. Bigger ambitions.',
-      greeting: true,
       paragraphs: [
         'Futures &amp; Arrivals Day on Friday 25 June. Then the full show on Saturday 26 and Sunday 27.',
         'Tickets are still at 2026 prices until 23:59 on Sunday 31 January.',

@@ -15,8 +15,6 @@ HEADCORN INTERNATIONAL AIRSHOW
 
 BIGGER SHOW. BIGGER AMBITIONS.
 
-*|IF:FNAME|*Hi *|FNAME|*.*|ELSE:|*Hi there.*|END:IF|*
-
 Futures & Arrivals Day on Friday 25 June. Then the full show on Saturday 26 and Sunday 27.
 
 Tickets are still at 2026 prices until 23:59 on Sunday 31 January.
