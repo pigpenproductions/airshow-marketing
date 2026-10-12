@@ -7,9 +7,26 @@ ghost tables and `mc:edit` regions come out exactly as written.
 | Email | Purpose | Output |
 |---|---|---|
 | 1 | Tier 1 deadline, GA tickets | `build/email-1-tier1.html` / `.txt` |
-| 3 | 2027 reintroduction and Christmas gift push (bold template) | `build/email-3-reintro-xmas.html` / `.txt` |
+| 3 | 2027 reintroduction and Christmas push (bold template) | `build/email-3-reintro-xmas.html` / `.txt` |
 
 Email 2 (premium early-bird) is not built yet.
+
+## Get it into Mailchimp
+
+Each email ships as a zip in `dist/`, ready for Mailchimp's zip import:
+
+1. Mailchimp: **Content > Email templates > Create template > Code your own > Import zip**.
+2. Upload `dist/email-3-reintro-xmas-mailchimp.zip`. Mailchimp uploads the images
+   to Content Studio and rewires the paths itself.
+3. Create the campaign from that template. The `mc:edit` regions (hero, intro,
+   numbers, Christmas band and so on) stay editable in Mailchimp's editor.
+4. On the campaign's plain-text tab, paste `dist/email-3-reintro-xmas-plain-text.txt`.
+5. Set the subject and preview text from the email file (`subject`, `preheader`).
+   Email 3: "2026 was the warm-up." / "Bigger show. A new theme. Headline acts
+   in the new year. 2026 prices until 31 January."
+
+To paste raw HTML instead, upload `build/assets/*` to Content Studio, put each
+URL into `imageUrls` in `src/config.js`, rebuild, and paste `build/<slug>.html`.
 
 ## Build
 
@@ -17,6 +34,8 @@ Email 2 (premium early-bird) is not built yet.
 npm install
 npm run build     # images, HTML, plain text, pre-flight checks
 npm run shots     # screenshots/ at 600px and 375px, light and dark, plus images off
+npm run package   # dist/<slug>-mailchimp.zip and dist/<slug>-plain-text.txt
+npm run all       # all three
 ```
 
 Screenshots use the Chromium at `/opt/pw-browsers/chromium`, or `PLAYWRIGHT_CHROMIUM`.
@@ -33,8 +52,8 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
   - `src/template.js` is the light, editorial one used by Email 1.
   - `src/template-bold.js` is the dark, full-bleed one used by Email 3: photo artboards, a giant type wall and a red band. Pick it with `template: 'bold'`.
   - Plain text for both comes from `src/text.js`.
-- **Links:** `src/config.js`. Replace `TICKET_URL`, `GIFT_URL`, `INSTAGRAM_URL`, `FACEBOOK_URL`.
-  UTMs are added automatically: `utm_source=mailchimp&utm_medium=email&utm_campaign=<campaign>&utm_content=<position>`.
+- **Links:** `src/config.js`. Tickets (headcornairshow.com/tickets), website,
+  Instagram, Facebook and TikTok are all set. UTMs are added automatically: `utm_source=mailchimp&utm_medium=email&utm_campaign=<campaign>&utm_content=<position>`.
 - **Images:**
   - Logo: `assets/hia-logo.png` (transparent PNG). The build puts it on a light
     rounded plate so the navy lettering survives dark mode.
@@ -44,9 +63,6 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
     renders them to JPEG. With `cutout`, the aircraft is cut out of the sky and
     flies over the type, as in "Put June under the tree."
   - Originals are in Dropbox: `Headcorn International Airshow/HIA 26 Photos and Videos/Photos from show/James Hill/Edited photos`.
-- **Mailchimp image URLs:** upload `build/assets/*` to Content Studio, paste each URL
-  into `imageUrls` in `src/config.js`, rebuild, then paste the HTML into
-  Mailchimp "Code your own". Without this the images are local paths and will break.
 
 ## [CONFIRM] before send
 
@@ -64,21 +80,20 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
 - [ ] "Roughly a quarter of the world's airworthy fleet" for four Hurricanes.
 
 **Email 3**
-- [ ] Gift cards are on sale on the send date ("Gift cards are on sale now").
+- [ ] "Every ticket is an e-ticket. Buy one now, give it on Christmas Day."
+      Ticket confirmations need to work as a present (forwardable, or printable).
 - [ ] "2026 was the warm-up", "Bigger show. Bigger ambitions." and "2027 goes
-      bigger." Alex should be comfortable standing behind all three.
+      bigger." Make sure you're happy to stand behind all three.
 - [ ] 2026 figures: 4 Hurricanes, 30+ aircraft, 18 operators, four countries,
       20+ WWII veterans, RAF Chinook.
-- [ ] Sign-off from Alex.
 
 **Links**
-- [ ] Instagram and Facebook URLs. Ticket and gift card URLs.
+- [x] Tickets, website, Instagram, Facebook, TikTok.
 
 ## Photo rights
 
 The bold template uses only James Hill's HIA 2026 set. Not used: the Bf 109
 shots (tail markings) and the photo of a parent and child, unless consent is on file.
-
 
 Being taken on our land doesn't give us the right to use a photo. Under UK
 copyright law the photographer owns it, wherever it was taken. Ticket terms can
@@ -91,7 +106,7 @@ shared for promotion. Credit every photo.
 ## Pre-send checklist
 
 - [ ] `npm run build` passes with no placeholder warnings.
-- [ ] Images hosted on Mailchimp and `imageUrls` filled in.
+- [ ] Zip imported into Mailchimp (or images hosted and `imageUrls` filled in).
 - [ ] Test send to Gmail (web and app), Outlook (Windows desktop and outlook.com)
       and Apple Mail (iPhone and Mac). Check light and dark mode in each.
 - [ ] Click every link. Check UTMs land in analytics. If Mailchimp's Google

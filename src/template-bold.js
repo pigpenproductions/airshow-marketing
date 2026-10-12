@@ -94,7 +94,7 @@ ${second}
 function signoff(b) {
   return row(
     `<div mc:edit="signoff"><p style="margin:0 0 4px 0;font-family:${FB};font-size:17px;line-height:27px;color:${C.text};">${b.lines.join(' ')}</p>
-<p style="margin:0;font-family:${FB};font-size:13px;line-height:19px;color:${C.muted};">${b.name}, ${b.title}</p></div>`,
+${b.name ? `<p style="margin:0;font-family:${FB};font-size:13px;line-height:19px;color:${C.muted};">${b.name}${b.title ? `, ${b.title}` : ''}</p>` : ''}</div>`,
     `40px ${P}px 0 ${P}px`
   );
 }
@@ -116,7 +116,7 @@ function footer(ctx) {
   const small = (inner, extra = '') => `<p style="margin:0 0 8px 0;font-family:${FB};font-size:12px;line-height:18px;color:${C.muted};${extra}">${inner}</p>`;
   const sep = `<span style="color:${C.rule};">&nbsp;&nbsp;/&nbsp;&nbsp;</span>`;
   return `<tr><td class="px" style="padding:44px ${P}px 40px ${P}px;"><table ${T} width="100%" style="width:100%;"><tr><td style="border-top:1px solid ${C.rule};padding:24px 0 0 0;">
-<p style="margin:0 0 16px 0;font-family:${FB};font-size:14px;line-height:20px;">${link(utm(ctx.links.instagram, ctx.campaign, 'footer_instagram'), 'Instagram')}${sep}${link(utm(ctx.links.facebook, ctx.campaign, 'footer_facebook'), 'Facebook')}${sep}${link(utm(ctx.links.website, ctx.campaign, 'footer_website'), 'headcornairshow.com')}</p>
+<p style="margin:0 0 16px 0;font-family:${FB};font-size:14px;line-height:20px;">${link(utm(ctx.links.instagram, ctx.campaign, 'footer_instagram'), 'Instagram')}${sep}${link(utm(ctx.links.facebook, ctx.campaign, 'footer_facebook'), 'Facebook')}${sep}${link(utm(ctx.links.tiktok, ctx.campaign, 'footer_tiktok'), 'TikTok')}${sep}${link(utm(ctx.links.website, ctx.campaign, 'footer_website'), 'headcornairshow.com')}</p>
 ${ctx.credits ? small(ctx.credits) : ''}
 ${small("You're receiving this because you subscribed or bought tickets from us.")}
 ${small('*|LIST:ADDRESSLINE|*')}

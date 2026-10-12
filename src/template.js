@@ -286,7 +286,7 @@ function footer(ctx) {
   const sep = `<span class="t-muted" style="color:${C.rule};">&nbsp;&nbsp;/&nbsp;&nbsp;</span>`;
   return `<tr><td class="px" style="padding:44px ${P}px 36px ${P}px;">
 <table ${T} width="100%" style="width:100%;"><tr><td class="b-rule" style="border-top:1px solid ${C.rule};padding:22px 0 0 0;">
-<p style="margin:0 0 16px 0;font-family:${FB};font-size:14px;line-height:20px;">${link(utm(ctx.links.instagram, ctx.campaign, 'footer_instagram'), 'Instagram')}${sep}${link(utm(ctx.links.facebook, ctx.campaign, 'footer_facebook'), 'Facebook')}${sep}${link(utm(ctx.links.website, ctx.campaign, 'footer_website'), 'headcornairshow.com')}</p>
+<p style="margin:0 0 16px 0;font-family:${FB};font-size:14px;line-height:20px;">${link(utm(ctx.links.instagram, ctx.campaign, 'footer_instagram'), 'Instagram')}${sep}${link(utm(ctx.links.facebook, ctx.campaign, 'footer_facebook'), 'Facebook')}${sep}${link(utm(ctx.links.tiktok, ctx.campaign, 'footer_tiktok'), 'TikTok')}${sep}${link(utm(ctx.links.website, ctx.campaign, 'footer_website'), 'headcornairshow.com')}</p>
 ${small("You're receiving this because you subscribed or bought tickets from us.")}
 ${small('*|LIST:ADDRESSLINE|*')}
 ${small(`<a class="t-muted" href="*|UPDATE_PROFILE|*" style="color:${C.muted};text-decoration:underline;">Update preferences</a>&nbsp;&nbsp;&nbsp;<a class="t-muted" href="*|UNSUB|*" style="color:${C.muted};text-decoration:underline;">Unsubscribe</a>`, 'margin-bottom:16px;')}

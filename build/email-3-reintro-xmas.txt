@@ -21,7 +21,7 @@ Futures & Arrivals Day on Friday 25 June. Then the full show on Saturday 26 and 
 
 Tickets are still at 2026 prices until 23:59 on Sunday 31 January.
 
-Get tickets: TICKET_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=intro_cta
+Get tickets: https://headcornairshow.com/tickets?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=intro_cta
 
 What's next. The theme: classified. Headline acts: announced in the new year.
 
@@ -38,26 +38,23 @@ Put June under the tree. A Spitfire in flight at Headcorn.
 
 CHRISTMAS
 
-Gift cards are on sale now. Give someone a day at Headcorn next June.
+Every ticket is an e-ticket. Buy one now, give it on Christmas Day.
 
-Tickets from £30 for an adult day, at 2026 prices until 31 January.
+From £30 for an adult day, at 2026 prices until 31 January.
 
-Buy a gift card: GIFT_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=band_gift
-
-Or get tickets for yourself: TICKET_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=band_tickets
+Get tickets: https://headcornairshow.com/tickets?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=band_xmas
 
 See you in June.
 
-Alex Yates
-Headcorn International Airshow
-
 ----------------------------------------
 
-Instagram: INSTAGRAM_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_instagram
+Instagram: https://www.instagram.com/headcornairshow/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_instagram
 
-Facebook: FACEBOOK_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_facebook
+Facebook: https://www.facebook.com/headcornairshow?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_facebook
 
-Website: https://www.headcornairshow.com/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_website
+TikTok: https://www.tiktok.com/@headcornairshow?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_tiktok
+
+Website: https://headcornairshow.com/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_website
 
 Photography: James Hill, Headcorn International Airshow 2026.
 

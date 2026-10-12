@@ -46,12 +46,12 @@ function check(slug, html, text) {
     if (href.startsWith('*|')) continue;
     if (!href.includes('utm_source=mailchimp')) errors.push(`Link without UTMs: ${href}`);
   }
-  for (const ph of ['TICKET_URL', 'GIFT_URL', 'INSTAGRAM_URL', 'FACEBOOK_URL', 'PHOTO_CREDIT']) {
+  for (const ph of ['TICKET_URL', 'GIFT_URL', 'INSTAGRAM_URL', 'FACEBOOK_URL', 'TIKTOK_URL', 'PHOTO_CREDIT']) {
     if (html.includes(ph)) warns.push(`Placeholder still in email: ${ph}`);
   }
   for (const m of html.matchAll(/src="([^"]+)"/g)) {
     if (!/^https:\/\//.test(m[1])) {
-      warns.push('Images use local paths. Upload to Mailchimp and set imageUrls in src/config.js before pasting.');
+      warns.push('Images use local paths: import dist/<slug>-mailchimp.zip, or set imageUrls in src/config.js to paste HTML.');
       break;
     }
   }

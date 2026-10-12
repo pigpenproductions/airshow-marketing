@@ -28,22 +28,24 @@ Family day (2 adults, 2 children): £75
 Family weekend: £120
 Child or carer: £15, £25 weekend
 
-Get tickets: TICKET_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=cta_main
+Get tickets: https://headcornairshow.com/tickets?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=cta_main
 
-Buying for someone? Gift cards arrive late November.
+Buying for someone? Every ticket is an e-ticket.
 
 4 Hurricanes in one field last June.
 Roughly a quarter of the world's airworthy fleet. Plus 30+ aircraft from 18 operators across four countries, 20+ WWII veterans and an RAF Chinook for Armed Forces Day.
 
-The first 2027 lineup announcements come in the new year. The 2026 price is here now. (TICKET_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=closing)
+The first 2027 lineup announcements come in the new year. The 2026 price is here now. (https://headcornairshow.com/tickets?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=closing)
 
 ----------------------------------------
 
-Instagram: INSTAGRAM_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_instagram
+Instagram: https://www.instagram.com/headcornairshow/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_instagram
 
-Facebook: FACEBOOK_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_facebook
+Facebook: https://www.facebook.com/headcornairshow?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_facebook
 
-Website: https://www.headcornairshow.com/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_website
+TikTok: https://www.tiktok.com/@headcornairshow?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_tiktok
+
+Website: https://headcornairshow.com/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_website
 
 You're receiving this because you subscribed or bought tickets from us.
 

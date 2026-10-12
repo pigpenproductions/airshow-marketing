@@ -1,0 +1,55 @@
+2026 prices until 23:59 on Sunday 31 January.
+
+View in browser: *|ARCHIVE|*
+
+----------------------------------------
+
+HEADCORN INTERNATIONAL AIRSHOW
+26-27 June 2027. Headcorn Aerodrome, Kent
+
+----------------------------------------
+
+TIER 1 ENDS 23:59, SUN 31 JANUARY
+
+STILL AT 2026 PRICES. FOR NOW.
+
+*|IF:FNAME|*Hi *|FNAME|*.*|ELSE:|*Hi there.*|END:IF|*
+
+Saturday 26 and Sunday 27 June 2027, with Futures & Arrivals Day on Friday 25. Tickets hold at last year's price until the end of January.
+
+ADULT DAY TICKET
+Now to 31 Jan: £30
+1 Feb to 30 Apr: £35
+From 1 May: £37.50
+
+OTHER TICKETS
+Adult weekend: £48
+Family day (2 adults, 2 children): £75
+Family weekend: £120
+Child or carer: £15, £25 weekend
+
+Get tickets: https://headcornairshow.com/tickets?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=cta_main
+
+Buying for someone? Every ticket is an e-ticket.
+
+4 Hurricanes in one field last June.
+Roughly a quarter of the world's airworthy fleet. Plus 30+ aircraft from 18 operators across four countries, 20+ WWII veterans and an RAF Chinook for Armed Forces Day.
+
+The first 2027 lineup announcements come in the new year. The 2026 price is here now. (https://headcornairshow.com/tickets?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=closing)
+
+----------------------------------------
+
+Instagram: https://www.instagram.com/headcornairshow/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_instagram
+
+Facebook: https://www.facebook.com/headcornairshow?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_facebook
+
+TikTok: https://www.tiktok.com/@headcornairshow?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_tiktok
+
+Website: https://headcornairshow.com/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=footer_website
+
+You're receiving this because you subscribed or bought tickets from us.
+
+*|LIST:ADDRESSLINE|*
+
+Update preferences: *|UPDATE_PROFILE|*
+Unsubscribe: *|UNSUB|*

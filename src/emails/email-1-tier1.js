@@ -28,7 +28,7 @@ module.exports = {
       type: 'ladder',
       title: 'Adult day ticket',
       now: { label: 'Now to 31 Jan', price: '£30' },
-      // [CONFIRM] Tier 2 and 3 prices with Alex. To drop them, set steps: null
+      // [CONFIRM] Tier 2 and 3 prices. To drop them, set steps: null
       // and the block falls back to `fallback` under the £30 price.
       steps: [
         { label: '1 Feb to 30 Apr', price: '£35' },
@@ -50,7 +50,7 @@ module.exports = {
       type: 'cta',
       label: 'Get tickets',
       utmContent: 'cta_main',
-      aside: 'Buying for someone? Gift cards arrive late November.',
+      aside: 'Buying for someone? Every ticket is an e-ticket.',
     },
     {
       type: 'proof',

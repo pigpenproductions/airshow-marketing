@@ -1,5 +1,5 @@
-// Email 3: HIA27 reintroduction and Christmas gift push. Bold template.
-// Send once gift cards are on sale (late November).
+// Email 3: HIA27 reintroduction and Christmas push. Bold template.
+// Tickets are e-tickets, so the Christmas angle is buying a ticket as a present.
 // Photography: James Hill, HIA 2026 (Dropbox: HIA 26 Photos and Videos/Photos from show/James Hill).
 
 const path = require('path');
@@ -85,19 +85,18 @@ module.exports = {
       ],
       after: 'Operators from four countries. An RAF Chinook for Armed Forces Day.',
     },
-    { type: 'art', key: 'art_xmas', link: 'gift', utmContent: 'xmas_art' },
+    { type: 'art', key: 'art_xmas', link: 'tickets', utmContent: 'xmas_art' },
     {
       type: 'band',
       eyebrow: 'Christmas',
       paragraphs: [
-        'Gift cards are on sale now. Give someone a day at Headcorn next June.',
-        'Tickets from £30 for an adult day, at 2026 prices until 31 January.',
+        'Every ticket is an e-ticket. Buy one now, give it on Christmas Day.',
+        'From £30 for an adult day, at 2026 prices until 31 January.',
       ],
-      label: 'Buy a gift card',
-      link: 'gift',
-      utmContent: 'band_gift',
-      secondary: { label: 'Or get tickets for yourself', link: 'tickets', utmContent: 'band_tickets' },
+      label: 'Get tickets',
+      link: 'tickets',
+      utmContent: 'band_xmas',
     },
-    { type: 'signoff', lines: ['See you in June.'], name: 'Alex Yates', title: 'Headcorn International Airshow' },
+    { type: 'signoff', lines: ['See you in June.'] },
   ],
 };

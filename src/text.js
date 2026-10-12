@@ -57,7 +57,7 @@ const BLOCKS = {
   cta: (b, ctx) => [`${b.label}: ${utm(ctx.links.tickets, ctx.campaign, b.utmContent)}`, b.aside].filter(Boolean).join('\n\n'),
   proof: (b) => `${b.figure} ${b.lead}\n${b.body}`,
   closing: (b, ctx) => strip(linkify(b.text, ctx)),
-  signoff: (b) => [...b.lines, '', b.name, b.title].join('\n'),
+  signoff: (b) => [...b.lines, b.name ? `\n${b.name}${b.title ? `, ${b.title}` : ''}` : null].filter(Boolean).join('\n'),
 };
 
 function renderText(email, ctx) {
@@ -75,6 +75,7 @@ function renderText(email, ctx) {
     rule,
     `Instagram: ${utm(ctx.links.instagram, ctx.campaign, 'footer_instagram')}`,
     `Facebook: ${utm(ctx.links.facebook, ctx.campaign, 'footer_facebook')}`,
+    `TikTok: ${utm(ctx.links.tiktok, ctx.campaign, 'footer_tiktok')}`,
     `Website: ${utm(ctx.links.website, ctx.campaign, 'footer_website')}`,
     email.credits || null,
     "You're receiving this because you subscribed or bought tickets from us.",

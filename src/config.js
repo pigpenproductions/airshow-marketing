@@ -3,11 +3,11 @@
 
 module.exports = {
   links: {
-    tickets: 'TICKET_URL',
-    gift: 'GIFT_URL',
-    website: 'https://www.headcornairshow.com/',
-    instagram: 'INSTAGRAM_URL',
-    facebook: 'FACEBOOK_URL',
+    tickets: 'https://headcornairshow.com/tickets',
+    website: 'https://headcornairshow.com/',
+    instagram: 'https://www.instagram.com/headcornairshow/',
+    facebook: 'https://www.facebook.com/headcornairshow',
+    tiktok: 'https://www.tiktok.com/@headcornairshow',
   },
 
   // Mailchimp needs absolute image URLs. Upload each file to Content Studio,
