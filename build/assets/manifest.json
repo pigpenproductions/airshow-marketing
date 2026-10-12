@@ -1,0 +1,20 @@
+{
+  "manifest": {
+    "logo": {
+      "file": "hia-logo-plate.png",
+      "w": 166,
+      "h": 91,
+      "standin": true
+    },
+    "hero-tier1": {
+      "file": "hero-tier1-placeholder.jpg",
+      "w": 552,
+      "h": 368,
+      "placeholder": true
+    }
+  },
+  "warnings": [
+    "assets/hia-logo.png not found. Using a STAND-IN wordmark. Add the real logo before sending.",
+    "assets/hero.jpg not found. email-1-tier1 uses a placeholder hero."
+  ]
+}
