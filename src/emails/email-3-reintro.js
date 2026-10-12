@@ -1,4 +1,5 @@
-// Email 3: HIA27 reintroduction. Bold template. Sent October 2026.
+// Email 3: HIA27 reintroduction. Bold template. SENT Monday 12 October 2026, about 13:30,
+// single subject (2026 was the warm-up.), no A/B test.
 // The Christmas angle lives in Email 4 (December).
 // Photography: James Hill, HIA 2026 (Dropbox: HIA 26 Photos and Videos/Photos from show/James Hill).
 
