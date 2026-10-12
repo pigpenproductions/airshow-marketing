@@ -64,7 +64,7 @@ FACTS. Use these exactly. Never invent aircraft, acts, prices, quotes, reviews o
   - [CONFIRM family and weekend prices].
   - Carer tickets are at the child rate, for one carer per disabled visitor.
 - Every ticket is an e-ticket, issued instantly. Advance tickets only. There are no sales on the gate.
-- The 2026 show had 4 Hurricanes, 30+ aircraft from 18 operators across four countries, 20+ WWII veterans, and an RAF Chinook for Armed Forces Day.
+- The 2026 show had 4 Hurricanes, 30+ aircraft from 18 operators across four countries, 20+ WWII veterans, defence attachés from two nations, and an RAF Chinook for Armed Forces Day. More nations' defence attachés are expected in 2027. [CONFIRM which two nations, and whether they can be named.]
 - 2027: a bigger show. The theme is still secret. Headline acts are announced in the new year.
 - History: In 1943-44 the airfield was Lashenden Advanced Landing Ground. It was home to the US 354th Fighter Group, the first group to fly the P-51B Mustang in combat, on long-range escort missions into Germany. [CONFIRM the "first group" wording against the heritage article before publishing.]
 - Rules: Photography is welcome. Drones are banned.
@@ -138,7 +138,7 @@ Add this as body text on the home page, under the hero and stats. It's real text
 > **A WW2 warbird airshow in the heart of Kent.**
 > The Headcorn International Airshow takes place on 26 and 27 June 2027 at Headcorn Aerodrome, between Maidstone and Ashford. Historic aircraft fly where they flew from in 1944, when this field was Lashenden, home of the 354th Fighter Group and its P-51 Mustangs.
 >
-> In 2026 the show brought 4 Hurricanes, more than 30 aircraft from 18 operators across four countries, and over 20 Second World War veterans to one field in Kent. 2027 goes bigger. The theme is still under wraps, and the headline acts are announced in the new year.
+> In 2026 the show brought 4 Hurricanes, more than 30 aircraft from 18 operators across four countries, over 20 Second World War veterans, and defence attachés from two nations to one field in Kent. 2027 goes bigger. The theme is still under wraps, and the headline acts are announced in the new year.
 >
 > Flying displays start around noon. On the ground there are wartime vehicles, re-enactors, international car displays, food and trade stands, helicopter flights and jeep rides. Children aged 5 and under go free. Every ticket is an e-ticket, sold in advance only.
 
@@ -500,12 +500,13 @@ See `website/mockups/international-mobile.png` and `international-desktop.png` f
        - HIA 26 · 30+ AIRCRAFT · LANDED
        - HIA 26 · 18 OPERATORS · LANDED
        - HIA 26 · 20+ VETERANS · LANDED
+       - HIA 26 · 2 DEF ATTACHÉS · LANDED
        - HIA 27 · THE THEME · CLASSIFIED (solid red)
        - HIA 27 · HEADLINERS · NEW YEAR (amber outline)
        - HIA 27 · MORE NATIONS · INBOUND (red outline with a blinking red dot)
      - The 2027 rows have amber letters.
    - **On mobile:** hide the header row, put FLIGHT and STATUS on one line, and put the tiles full width beneath.
-   - **Line under the board:** "2026: operators from four countries. An RAF Chinook for Armed Forces Day." On the right: "2027 GOES BIGGER."
+   - **Line under the board:** "2026: defence attachés from two nations. Operators from four countries. An RAF Chinook for Armed Forces Day." On the right: "2027 GOES BIGGER."
    - Make the board a CMS collection ("Arrivals", with the fields flight, text, status and style). Then each announcement in the new year is just a change of status from CLASSIFIED to the act's name.
 3. **Radar** (replaces "WHAT'S NEXT").
    - Navy (#0A1543) section in two columns, stacked on mobile.

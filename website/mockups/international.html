@@ -160,12 +160,13 @@
       <div class="row" role="row"><div class="flight">HIA 26</div><div class="flaps" data-text="30+ AIRCRAFT"></div><div class="status landed">LANDED</div></div>
       <div class="row" role="row"><div class="flight">HIA 26</div><div class="flaps" data-text="18 OPERATORS"></div><div class="status landed">LANDED</div></div>
       <div class="row" role="row"><div class="flight">HIA 26</div><div class="flaps" data-text="20+ VETERANS"></div><div class="status landed">LANDED</div></div>
+      <div class="row" role="row"><div class="flight">HIA 26</div><div class="flaps" data-text="2 DEF ATTACHÉS"></div><div class="status landed">LANDED</div></div>
       <div class="row y27" role="row"><div class="flight">HIA 27</div><div class="flaps" data-text="THE THEME"></div><div class="status classified">CLASSIFIED</div></div>
       <div class="row y27" role="row"><div class="flight">HIA 27</div><div class="flaps" data-text="HEADLINERS"></div><div class="status newyear">NEW YEAR</div></div>
       <div class="row y27" role="row"><div class="flight">HIA 27</div><div class="flaps" data-text="MORE NATIONS"></div><div class="status inbound"><i></i>INBOUND</div></div>
     </div>
     <div class="board-foot">
-      <span class="cap">2026: operators from four countries. An RAF Chinook for Armed Forces Day.</span>
+      <span class="cap">2026: defence attachés from two nations. Operators from four countries. An RAF Chinook for Armed Forces Day.</span>
       <span class="cap" style="color:var(--white)">2027 goes bigger.</span>
     </div>
   </div>
@@ -231,7 +232,7 @@
   document.getElementById('ticker').innerHTML = half + half;
 
   // Split-flap: each tile spins through characters, then settles. Runs once when the board scrolls into view.
-  const CH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+';
+  const CH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+';  // settles on the real character, accents included
   const isStatic = location.search.includes('static');
   document.querySelectorAll('.flaps').forEach(el => {
     [...el.dataset.text].forEach(c => {
