@@ -10,7 +10,8 @@ module.exports = {
   template: 'bold',
   subject: '2026 was the warm-up.',
   campaign: 'hia27_reintro_xmas',
-  preheader: 'Bigger show. A new theme. Headline acts in the new year. 2026 prices until 31 January.',
+  preheader: 'Bigger show. New theme. Headline acts in the new year. Price held until 31 January.',
+  // A/B subject: 'Headcorn 2027. Same price as 2026.'
   credits: 'Photography: James Hill, Headcorn International Airshow 2026.',
 
   // Artboards: photo + type, rendered to JPEG by scripts/assets.js.
