@@ -52,7 +52,7 @@ FACTS. Use these exactly. Never invent aircraft, acts, prices, quotes, reviews o
 - Dates: Saturday 26 and Sunday 27 June 2027. Futures & Arrivals Day is Friday 25 June 2027.
 - Venue: Headcorn Aerodrome (historically Lashenden), Shenley Road, Headcorn, Ashford, Kent TN27 9HX. Near Maidstone and Ashford.
 - Hours:
-  - Gates and car parks open 9am.
+  - Car parks open 9am. Gates and the ground show open 10am.
   - Show 10am to 6pm.
   - Flying from about noon.
 - Tickets:
