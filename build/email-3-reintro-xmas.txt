@@ -1,4 +1,4 @@
-A new theme. Bigger acts in the new year. 2026 prices until 31 January.
+Bigger show. A new theme. Headline acts in the new year. 2026 prices until 31 January.
 
 View in browser: *|ARCHIVE|*
 
@@ -9,30 +9,38 @@ HEADCORN INTERNATIONAL AIRSHOW
 
 ----------------------------------------
 
-25-27 JUNE 2027, HEADCORN, KENT
+2026 was the warm-up. Headcorn International Airshow, 25-27 June 2027.
 
-HEADCORN IS BACK.
+25-27 JUNE 2027 / HEADCORN AERODROME, KENT
+
+BIGGER SHOW. BIGGER AMBITIONS.
 
 *|IF:FNAME|*Hi *|FNAME|*.*|ELSE:|*Hi there.*|END:IF|*
 
-Headcorn 2027 is a bigger show with bigger ambitions. Futures & Arrivals Day on Friday 25 June, then the full show on Saturday 26 and Sunday 27.
+Futures & Arrivals Day on Friday 25 June. Then the full show on Saturday 26 and Sunday 27.
 
-NOT MUCH. YET.
-The theme: to be announced
-Big acts: in the new year
-Both land in your inbox first chance we get.
+Tickets are still at 2026 prices until 23:59 on Sunday 31 January.
 
-LAST JUNE, FOR SCALE
-4 Hurricanes in one field.
-30+ aircraft from 18 operators across four countries
-20+ WWII veterans
-1 RAF Chinook for Armed Forces Day
+Get tickets: TICKET_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=intro_cta
 
-2027 has to beat that. It will.
+What's next. The theme: classified. Headline acts: announced in the new year.
 
-PUT JUNE UNDER THE TREE.
+LAST JUNE. ONE FIELD IN KENT.
+4 Hurricanes.
+30+ aircraft.
+18 operators.
+20+ WWII veterans.
+2027 goes bigger.
 
-Gift cards are on sale now. Tickets are still at 2026 prices until 23:59 on Sunday 31 January, from £30 for an adult day.
+Operators from four countries. An RAF Chinook for Armed Forces Day.
+
+Put June under the tree. A Spitfire in flight at Headcorn.
+
+CHRISTMAS
+
+Gift cards are on sale now. Give someone a day at Headcorn next June.
+
+Tickets from £30 for an adult day, at 2026 prices until 31 January.
 
 Buy a gift card: GIFT_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=band_gift
 
@@ -40,8 +48,8 @@ Or get tickets for yourself: TICKET_URL?utm_source=mailchimp&utm_medium=email&ut
 
 See you in June.
 
-Alex
-Alex Yates, Headcorn International Airshow
+Alex Yates
+Headcorn International Airshow
 
 ----------------------------------------
 
@@ -50,6 +58,8 @@ Instagram: INSTAGRAM_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia2
 Facebook: FACEBOOK_URL?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_facebook
 
 Website: https://www.headcornairshow.com/?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_reintro_xmas&utm_content=footer_website
+
+Photography: James Hill, Headcorn International Airshow 2026.
 
 You're receiving this because you subscribed or bought tickets from us.
 

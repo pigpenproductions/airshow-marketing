@@ -2,24 +2,38 @@
   "manifest": {
     "logo": {
       "file": "hia-logo-plate.png",
-      "w": 166,
-      "h": 91,
-      "standin": true
+      "w": 108,
+      "h": 108,
+      "standin": false
+    },
+    "badge": {
+      "file": "hia-badge.png",
+      "w": 64,
+      "h": 64
+    },
+    "art_hero": {
+      "file": "art_hero.jpg",
+      "w": 600,
+      "h": 780
+    },
+    "art_theme": {
+      "file": "art_theme.jpg",
+      "w": 600,
+      "h": 600
+    },
+    "art_xmas": {
+      "file": "art_xmas.jpg",
+      "w": 600,
+      "h": 660
     },
     "hero-tier1": {
       "file": "hero-tier1-placeholder.jpg",
       "w": 552,
       "h": 368,
       "placeholder": true
-    },
-    "poster-reintro": {
-      "file": "poster-reintro.jpg",
-      "w": 600,
-      "h": 770
     }
   },
   "warnings": [
-    "assets/hia-logo.png not found. Using a STAND-IN wordmark. Add the real logo before sending.",
     "assets/hero.jpg not found. email-1-tier1 uses a placeholder hero."
   ]
 }

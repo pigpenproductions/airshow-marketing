@@ -12,11 +12,14 @@ const path = require('path');
 const FONT_LINK =
   '<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">';
 
-async function cutout(page, srcFile, { trimRight = 0, tolerance = 22 } = {}) {
-  const uri = `data:image/png;base64,${fs.readFileSync(srcFile).toString('base64')}`;
+// mode 'grey' suits pale, grey-blue skies. mode 'blue' suits saturated blue
+// skies over grey-green camouflage: sky must be clearly bluer than it is red.
+async function cutout(page, srcFile, { trimRight = 0, tolerance = 22, mode = 'grey' } = {}) {
+  const mime = srcFile.endsWith('.png') ? 'image/png' : 'image/jpeg';
+  const uri = `data:${mime};base64,${fs.readFileSync(srcFile).toString('base64')}`;
   await page.setContent('<!doctype html><body></body>');
   return page.evaluate(
-    async ({ uri, trimRight, tolerance }) => {
+    async ({ uri, trimRight, tolerance, mode }) => {
       const img = new Image();
       img.src = uri;
       await img.decode();
@@ -42,6 +45,8 @@ async function cutout(page, srcFile, { trimRight = 0, tolerance = 22 } = {}) {
       const diff = (a, b) => Math.abs(px[a * 4] - px[b * 4]) + Math.abs(px[a * 4 + 1] - px[b * 4 + 1]) + Math.abs(px[a * 4 + 2] - px[b * 4 + 2]);
       // Pixels darker than the sky by this much are never sky, even through soft edges.
       const lum = (i) => 0.3 * px[i * 4] + 0.59 * px[i * 4 + 1] + 0.11 * px[i * 4 + 2];
+      const skyish = mode === 'blue' ? (i) => px[i * 4 + 2] - px[i * 4] > 45 && lum(i) > 80 : (i) => lum(i) > 95;
+      const skyishLoose = mode === 'blue' ? (i) => px[i * 4 + 2] - px[i * 4] > 35 && lum(i) > 70 : (i) => lum(i) > 105;
       while (stack.length) {
         const i = stack.pop();
         const cx = i % w;
@@ -51,7 +56,7 @@ async function cutout(page, srcFile, { trimRight = 0, tolerance = 22 } = {}) {
           const ny = cy + dy;
           if (nx < 0 || ny < 0 || nx >= w || ny >= h) continue;
           const n = ny * w + nx;
-          if (!sky[n] && diff(i, n) < tolerance && lum(n) > 95) push(n);
+          if (!sky[n] && diff(i, n) < tolerance && skyish(n)) push(n);
         }
       }
       // Clean-up passes: sky-coloured pixels touching the sky are sky. Catches
@@ -59,11 +64,16 @@ async function cutout(page, srcFile, { trimRight = 0, tolerance = 22 } = {}) {
       for (let pass = 0; pass < 4; pass++) {
         const grow = [];
         for (let k = 0; k < w * h; k++) {
-          if (sky[k] || lum(k) < 105) continue;
+          if (sky[k] || !skyishLoose(k)) continue;
           const kx = k % w;
           if ((kx > 0 && sky[k - 1]) || (kx < w - 1 && sky[k + 1]) || sky[k - w] || sky[k + w]) grow.push(k);
         }
         grow.forEach((k) => (sky[k] = 1));
+      }
+      // Blue skies: grain leaves islands the fill can't reach. Any clearly
+      // sky-blue, bright pixel is sky. Roundel blue is far too dark to match.
+      if (mode === 'blue') {
+        for (let k = 0; k < w * h; k++) if (px[k * 4 + 2] - px[k * 4] > 50 && lum(k) > 110) sky[k] = 1;
       }
       // Alpha with a one-pixel feather on the airframe edge.
       for (let j = 0; j < h; j++) {
@@ -88,7 +98,7 @@ async function cutout(page, srcFile, { trimRight = 0, tolerance = 22 } = {}) {
       bg.getContext('2d').drawImage(img, 0, 0);
       return { plane: c.toDataURL('image/png'), photo: bg.toDataURL('image/png'), w, h };
     },
-    { uri, trimRight, tolerance }
+    { uri, trimRight, tolerance, mode }
   );
 }
 
@@ -131,4 +141,4 @@ ${caption}
   return { w: W, h: H };
 }
 
-module.exports = { makePoster };
+module.exports = { makePoster, cutout, FONT_LINK };

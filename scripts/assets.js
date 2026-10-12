@@ -3,18 +3,22 @@
 //   lettering survives dark mode and forced colour inversion.
 // - Heroes: copies assets/<file> if present, else renders a labelled navy placeholder.
 // - If assets/hia-logo.png is missing, renders a stand-in wordmark and warns.
+// - Badge: the round logo on a white disc, for the dark "bold" template.
+// - Artboards: each email's `art` list, rendered by scripts/artboard.js.
 
 const fs = require('fs');
 const path = require('path');
 const { launch } = require('./browser');
 const { makePoster } = require('./poster');
+const { renderArt } = require('./artboard');
 const emails = require('../src/emails');
 
 const ROOT = path.join(__dirname, '..');
 const SRC = path.join(ROOT, 'assets');
 const OUT = path.join(ROOT, 'build', 'assets');
 
-const LOGO_W = 150; // displayed wordmark width
+const LOGO_W = 92; // displayed logo width (the logo is a round badge)
+const BADGE_W = 64;
 const PLATE_PAD = 8;
 const HERO_W = 552; // displayed width; source should be 2x (1104)
 
@@ -64,6 +68,25 @@ async function main() {
     path.join(OUT, 'hia-logo-plate.png')
   );
   manifest.logo = { file: 'hia-logo-plate.png', w: LOGO_W + PLATE_PAD * 2, h: logoH + PLATE_PAD * 2, standin: !fs.existsSync(path.join(SRC, 'hia-logo.png')) };
+
+  // ---- badge (round logo on a white disc) ----
+  await shoot(
+    page,
+    `<div id="b" style="width:${BADGE_W}px;height:${BADGE_W}px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center"><img src="${logoUri}" style="width:${BADGE_W - 4}px;height:${BADGE_W - 4}px"></div>`,
+    '#b',
+    path.join(OUT, 'hia-badge.png')
+  );
+  manifest.badge = { file: 'hia-badge.png', w: BADGE_W, h: BADGE_W };
+
+  // ---- artboards ----
+  for (const email of emails) {
+    for (const a of email.art || []) {
+      const file = `${a.key}.jpg`;
+      const d = await renderArt(page, a, path.join(OUT, file));
+      manifest[a.key] = { file, w: d.w, h: d.h };
+      console.log(`  art: ${file}`);
+    }
+  }
 
   // ---- heroes ----
   for (const email of emails) {

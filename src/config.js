@@ -18,5 +18,9 @@ module.exports = {
     'hero-tier1': '',
     'hero-premium': '',
     'poster-reintro': '',
+    badge: '',
+    art_hero: '',
+    art_theme: '',
+    art_xmas: '',
   },
 };

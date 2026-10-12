@@ -7,6 +7,7 @@ const juice = require('juice');
 const config = require('../src/config');
 const emails = require('../src/emails');
 const { render } = require('../src/template');
+const { render: renderBold } = require('../src/template-bold');
 const { renderText } = require('../src/text');
 
 const ROOT = path.join(__dirname, '..');
@@ -62,9 +63,12 @@ function main() {
   for (const email of emails) {
     const ctx = { links: config.links, logo: img('logo'), hero: email.hero ? { ...img(email.hero.key), alt: email.hero.alt, credit: email.hero.credit } : null,
       poster: email.poster ? { ...img(email.poster.key), alt: email.poster.alt, credit: email.poster.credit } : null,
+      badge: email.template === 'bold' ? img('badge') : null,
+      art: Object.fromEntries((email.art || []).map((a) => [a.key, { ...img(a.key), alt: a.alt, credit: a.credit }])),
+      credits: email.credits,
     };
 
-    const raw = render(email, ctx);
+    const raw = (email.template === 'bold' ? renderBold : render)(email, ctx);
     const html = juice(raw, { preserveMediaQueries: true, preserveFontFaces: true, applyWidthAttributes: false, applyHeightAttributes: false, removeStyleTags: true });
     const text = renderText(email, ctx);
 
