@@ -12,7 +12,7 @@ module.exports = {
   campaign: 'hia27_reintro',
   preheader: 'Bigger show. New theme. Headline acts in the new year. Price held until 31 January.',
   // A/B subject: 'Headcorn 2027. Same price as 2026.'
-  credits: 'Photography: James Hill, Headcorn International Airshow 2026. P-47 Thunderbolt: Paul Johnson, Flightline UK.',
+  credits: 'Photography: James Hill, Headcorn International Airshow 2026.',
 
   // Artboards: photo + type, rendered to JPEG by scripts/assets.js.
   art: [
@@ -33,32 +33,31 @@ module.exports = {
     },
     {
       key: 'art_theme',
-      photo: photo('mustang-qi-close.jpg'),
+      photo: photo('headcorn-busy-day-aerial.jpg'),
       width: 600,
       height: 600,
-      position: '30% 50%',
-      shade: 'linear-gradient(0deg,rgba(5,7,15,.94) 0%,rgba(5,7,15,.55) 38%,rgba(5,7,15,0) 62%)',
+      position: '45% 40%',
+      shade: 'linear-gradient(0deg,rgba(5,7,15,.95) 0%,rgba(5,7,15,.6) 40%,rgba(5,7,15,0) 66%)',
       layers: `<div style="position:absolute;left:24px;right:24px;bottom:30px">
           <div class="d" style="font-size:64px;margin-bottom:18px">What's next</div>
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px"><div class="s" style="width:140px">The theme</div><div class="s" style="flex:1;background:#D40F0F;height:46px;display:flex;align-items:center;justify-content:flex-end;padding:0 14px">Classified</div></div>
           <div style="display:flex;align-items:center;gap:14px"><div class="s" style="width:140px">Headline acts</div><div class="s" style="flex:1;background:#D40F0F;height:46px;display:flex;align-items:center;justify-content:flex-end;padding:0 14px">New year</div></div>
         </div>`,
-      alt: "What's next. The theme: classified. Headline acts: announced in the new year.",
+      alt: "What's next. The theme: classified. Headline acts: announced in the new year. Headcorn from the air on a busy day.",
     },
     {
       key: 'art_flying',
-      photo: photo('thunderbolt-nellie-bank.jpg'),
+      photo: photo('spitfire-flypast.jpg'),
       width: 600,
-      height: 620,
-      position: '62% 50%',
-      zoom: 1.12,
-      shade: 'linear-gradient(180deg,rgba(5,7,15,.35) 0%,rgba(5,7,15,0) 34%,rgba(5,7,15,0) 70%,rgba(5,7,15,.55) 100%)',
+      height: 640,
+      cutout: { mode: 'blue' },
+      sky: 'linear-gradient(170deg,#6FA8DC 0%,#80B3E3 45%,#8AAED6 100%)',
+      planeStyle: 'width:700px;left:-30px;top:196px;transform:rotate(-5deg)',
       layers: `<div style="position:absolute;left:22px;top:26px">
-          <div class="d fit" data-w="380">2027 goes</div><br>
-          <div class="d fit" data-w="380" style="color:#E3141B;margin-top:4px">bigger.</div>
-        </div>
-        <div class="s" style="position:absolute;left:24px;bottom:24px">P-47 Thunderbolt &lsquo;Nellie&rsquo;</div>`,
-      alt: '2027 goes bigger. A P-47 Thunderbolt banking hard.',
+          <div class="d fit" data-w="556">2027 goes</div><br>
+          <div class="d fit" data-w="556" style="color:#D40F0F;margin-top:4px">bigger.</div>
+        </div>`,
+      alt: '2027 goes bigger. Spitfire Spirit of Kent in flight.',
     },
   ],
 
