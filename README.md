@@ -7,7 +7,8 @@ ghost tables and `mc:edit` regions come out exactly as written.
 | Email | Purpose | Output |
 |---|---|---|
 | 1 | Tier 1 deadline, GA tickets (bold template) | `build/email-1-tier1.html` / `.txt` |
-| 3 | 2027 reintroduction and Christmas push (bold template) | `build/email-3-reintro-xmas.html` / `.txt` |
+| 3 | 2027 reintroduction, sent October (bold template) | `build/email-3-reintro.html` / `.txt` |
+| 4 | Christmas push, DRAFT for December (bold template) | `build/email-4-christmas.html` / `.txt` |
 
 Email 2 (premium early-bird) is not built yet.
 
@@ -16,11 +17,11 @@ Email 2 (premium early-bird) is not built yet.
 Each email ships as a zip in `dist/`, ready for Mailchimp's zip import:
 
 1. Mailchimp: **Content > Email templates > Create template > Code your own > Import zip**.
-2. Upload `dist/email-3-reintro-xmas-mailchimp.zip`. Mailchimp uploads the images
+2. Upload `dist/email-3-reintro-mailchimp.zip`. Mailchimp uploads the images
    to Content Studio and rewires the paths itself.
 3. Create the campaign from that template. The `mc:edit` regions (hero, intro,
    numbers, Christmas band and so on) stay editable in Mailchimp's editor.
-4. On the campaign's plain-text tab, paste `dist/email-3-reintro-xmas-plain-text.txt`.
+4. On the campaign's plain-text tab, paste `dist/email-3-reintro-plain-text.txt`.
 5. Set the subject and preview text from the email file (`subject`, `preheader`).
    Email 3: "2026 was the warm-up." / "Bigger show. A new theme. Headline acts
    in the new year. 2026 prices until 31 January."
@@ -68,8 +69,7 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
 
 **Assets**
 - [x] Real logo, from Dropbox `Logo & Pics`.
-- [ ] James Hill's terms cover paid email marketing and editing his photos
-      (cropping, overlaid type, cut-outs). He's credited in the Email 3 footer.
+- [x] James Hill is happy for his photos to be used and edited. He's credited in each footer.
 - [ ] Display owners are happy for their aircraft to front a ticket campaign:
       Spitfire FX-M "Spirit of Kent" and P-51 Mustang "QI".
 
@@ -81,10 +81,9 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
       child or carer £15 (£25 weekend).
 
 **Email 3**
-- [ ] "Every ticket is an e-ticket. Buy one now, give it on Christmas Day."
+- [ ] Email 4: "Every ticket is an e-ticket. Buy one now, give it on Christmas Day."
       Ticket confirmations need to work as a present (forwardable, or printable).
-- [ ] "2026 was the warm-up", "Bigger show. Bigger ambitions." and "2027 goes
-      bigger." Make sure you're happy to stand behind all three.
+- [x] "2026 was the warm-up", "Bigger show. Bigger ambitions." and "2027 goes bigger." Confirmed.
 - [ ] 2026 figures: 4 Hurricanes, 30+ aircraft, 18 operators, four countries,
       20+ WWII veterans, RAF Chinook.
 

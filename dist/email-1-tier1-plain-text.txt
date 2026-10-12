@@ -19,7 +19,7 @@ Saturday 26 and Sunday 27 June 2027, with Futures & Arrivals Day on Friday 25. T
 
 Get tickets: https://headcornairshow.com/tickets?utm_source=mailchimp&utm_medium=email&utm_campaign=hia27_tier1&utm_content=intro_cta
 
-Buying for someone? Every ticket is an e-ticket.
+Buying for someone? Every ticket is an <span style="white-space:nowrap;">e-ticket</span>.
 
 ADULT DAY TICKET
 Now to 31 Jan: £30

@@ -52,7 +52,7 @@ module.exports = {
         "Saturday 26 and Sunday 27 June 2027, with Futures &amp; Arrivals Day on Friday 25. Tickets hold at last year's price until the end of January.",
       ],
       cta: { label: 'Get tickets', link: 'tickets', utmContent: 'intro_cta' },
-      note: 'Buying for someone? Every ticket is an e-ticket.',
+      note: 'Buying for someone? Every ticket is an <span style="white-space:nowrap;">e-ticket</span>.',
     },
     {
       type: 'prices',
