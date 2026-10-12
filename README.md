@@ -70,6 +70,9 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
 **Assets**
 - [x] Real logo, from Dropbox `Logo & Pics`.
 - [x] James Hill is happy for his photos to be used and edited. He's credited in each footer.
+- [ ] Email 3's flying P-47 Thunderbolt "Nellie" is by Paul Johnson, Flightline UK, from the
+      Flightline image library in Dropbox (not taken at Headcorn). Confirm that library's terms cover
+      email marketing with overlaid type. He's credited in the footer.
 - [ ] Display owners are happy for their aircraft to front a ticket campaign:
       Spitfire FX-M "Spirit of Kent" and P-51 Mustang "QI".
 

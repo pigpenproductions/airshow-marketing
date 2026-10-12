@@ -12,7 +12,7 @@ module.exports = {
   campaign: 'hia27_reintro',
   preheader: 'Bigger show. New theme. Headline acts in the new year. Price held until 31 January.',
   // A/B subject: 'Headcorn 2027. Same price as 2026.'
-  credits: 'Photography: James Hill, Headcorn International Airshow 2026.',
+  credits: 'Photography: James Hill, Headcorn International Airshow 2026. P-47 Thunderbolt: Paul Johnson, Flightline UK.',
 
   // Artboards: photo + type, rendered to JPEG by scripts/assets.js.
   art: [
@@ -45,6 +45,21 @@ module.exports = {
         </div>`,
       alt: "What's next. The theme: classified. Headline acts: announced in the new year.",
     },
+    {
+      key: 'art_flying',
+      photo: photo('thunderbolt-nellie-bank.jpg'),
+      width: 600,
+      height: 620,
+      position: '62% 50%',
+      zoom: 1.12,
+      shade: 'linear-gradient(180deg,rgba(5,7,15,.35) 0%,rgba(5,7,15,0) 34%,rgba(5,7,15,0) 70%,rgba(5,7,15,.55) 100%)',
+      layers: `<div style="position:absolute;left:22px;top:26px">
+          <div class="d fit" data-w="380">2027 goes</div><br>
+          <div class="d fit" data-w="380" style="color:#E3141B;margin-top:4px">bigger.</div>
+        </div>
+        <div class="s" style="position:absolute;left:24px;bottom:24px">P-47 Thunderbolt &lsquo;Nellie&rsquo;</div>`,
+      alt: '2027 goes bigger. A P-47 Thunderbolt banking hard.',
+    },
   ],
 
   blocks: [
@@ -69,10 +84,10 @@ module.exports = {
         { text: '30+ aircraft.' },
         { text: '18 operators.' },
         { text: '20+ WWII veterans.' },
-        { text: '2027 goes bigger.', red: true },
       ],
       after: 'Operators from four countries. An RAF Chinook for Armed Forces Day.',
     },
+    { type: 'art', key: 'art_flying', link: 'tickets', utmContent: 'flying' },
     {
       type: 'band',
       eyebrow: 'Headcorn 2027',
