@@ -19,6 +19,7 @@ module.exports = {
     { type: 'headline', text: 'Still at 2026 prices. For now.' },
     {
       type: 'intro',
+      greeting: false,
       paragraphs: [
         'Saturday 26 and Sunday 27 June 2027, with Futures &amp; Arrivals Day on Friday 25. Tickets hold at last year\'s price until the end of January.',
       ],

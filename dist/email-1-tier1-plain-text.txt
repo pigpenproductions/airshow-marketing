@@ -13,8 +13,6 @@ TIER 1 ENDS 23:59, SUN 31 JANUARY
 
 STILL AT 2026 PRICES. FOR NOW.
 
-*|IF:FNAME|*Hi *|FNAME|*.*|ELSE:|*Hi there.*|END:IF|*
-
 Saturday 26 and Sunday 27 June 2027, with Futures & Arrivals Day on Friday 25. Tickets hold at last year's price until the end of January.
 
 ADULT DAY TICKET
