@@ -16,6 +16,7 @@ const BLOCKS = {
   hero: () => null,
   poster: () => null,
   art: () => null,
+  prices: (b) => [BLOCKS.ladder({ ...b, title: b.eyebrow }), b.rows ? BLOCKS.priceList({ title: b.listTitle, rows: b.rows }) : null].filter(Boolean).join('\n\n'),
   copy: (b, ctx) =>
     [
       b.eyebrow ? b.eyebrow.toUpperCase() : null,

@@ -11,6 +11,16 @@
       "w": 64,
       "h": 64
     },
+    "art_t1_hero": {
+      "file": "art_t1_hero.jpg",
+      "w": 600,
+      "h": 760
+    },
+    "art_t1_taxi": {
+      "file": "art_t1_taxi.jpg",
+      "w": 600,
+      "h": 400
+    },
     "art_hero": {
       "file": "art_hero.jpg",
       "w": 600,
@@ -25,15 +35,7 @@
       "file": "art_xmas.jpg",
       "w": 600,
       "h": 660
-    },
-    "hero-tier1": {
-      "file": "hero-tier1-placeholder.jpg",
-      "w": 552,
-      "h": 368,
-      "placeholder": true
     }
   },
-  "warnings": [
-    "assets/hero.jpg not found. email-1-tier1 uses a placeholder hero."
-  ]
+  "warnings": []
 }

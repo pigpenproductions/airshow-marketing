@@ -6,7 +6,7 @@ ghost tables and `mc:edit` regions come out exactly as written.
 
 | Email | Purpose | Output |
 |---|---|---|
-| 1 | Tier 1 deadline, GA tickets | `build/email-1-tier1.html` / `.txt` |
+| 1 | Tier 1 deadline, GA tickets (bold template) | `build/email-1-tier1.html` / `.txt` |
 | 3 | 2027 reintroduction and Christmas push (bold template) | `build/email-3-reintro-xmas.html` / `.txt` |
 
 Email 2 (premium early-bird) is not built yet.
@@ -49,8 +49,8 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
 
 - **Copy:** `src/emails/<slug>.js`. One block per section.
 - **Layout:** two templates.
-  - `src/template.js` is the light, editorial one used by Email 1.
-  - `src/template-bold.js` is the dark, full-bleed one used by Email 3: photo artboards, a giant type wall and a red band. Pick it with `template: 'bold'`.
+  - `src/template.js` is the original light, editorial one (no email uses it now).
+  - `src/template-bold.js` is the dark, full-bleed one used by Emails 1 and 3: photo artboards, a giant type wall and a red band. Pick it with `template: 'bold'`.
   - Plain text for both comes from `src/text.js`.
 - **Links:** `src/config.js`. Tickets (headcornairshow.com/tickets), website,
   Instagram, Facebook and TikTok are all set. UTMs are added automatically: `utm_source=mailchimp&utm_medium=email&utm_campaign=<campaign>&utm_content=<position>`.
@@ -68,7 +68,6 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
 
 **Assets**
 - [x] Real logo, from Dropbox `Logo & Pics`.
-- [ ] Email 1 hero photo, and its credit (`PHOTO_CREDIT`).
 - [ ] James Hill's terms cover paid email marketing and editing his photos
       (cropping, overlaid type, cut-outs). He's credited in the Email 3 footer.
 - [ ] Display owners are happy for their aircraft to front a ticket campaign:
@@ -78,6 +77,8 @@ duplicate `mc:edit` names. It warns about every placeholder still in the email.
 - [ ] Tier 2 and 3 adult day prices (£35 from 1 Feb, £37.50 from 1 May). If not
       confirmed, set `steps: null` and the email says "The price steps up on 1 February."
 - [ ] "Roughly a quarter of the world's airworthy fleet" for four Hurricanes.
+- [ ] Other ticket prices: adult weekend £48, family day £75, family weekend £120,
+      child or carer £15 (£25 weekend).
 
 **Email 3**
 - [ ] "Every ticket is an e-ticket. Buy one now, give it on Christmas Day."

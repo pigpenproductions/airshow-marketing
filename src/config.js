@@ -22,5 +22,7 @@ module.exports = {
     art_hero: '',
     art_theme: '',
     art_xmas: '',
+    art_t1_hero: '',
+    art_t1_taxi: '',
   },
 };

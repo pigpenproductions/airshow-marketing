@@ -11,6 +11,8 @@
 //   cutout: { mode: 'blue' }, // optional
 //   sky: 'linear-gradient(...)', // with cutout: drop the photo, paint this sky,
 //   planeStyle: 'left:..;top:..;width:..' // and place the aircraft freely
+//   photoStyle: '...'         // with sky and no cutout: place the whole photo
+//                             // on the painted sky (fade its edges with a mask)
 // }
 
 const fs = require('fs');
@@ -45,7 +47,8 @@ body{margin:0;background:#000}
 .fit{display:inline-block}
 </style></head><body>
 <div id="art">
-${spec.sky ? `<div style="position:absolute;inset:0;z-index:1;background:${spec.sky}"></div>` : `<img src="${photoUrl}" style="${imgStyle};z-index:1">`}
+${spec.sky ? `<div style="position:absolute;inset:0;z-index:1;background:${spec.sky}"></div>` : ''}
+${!spec.sky ? `<img src="${photoUrl}" style="${imgStyle};z-index:1">` : spec.photoStyle ? `<img src="${photoUrl}" style="position:absolute;z-index:1;${spec.photoStyle}">` : ''}
 ${spec.shade ? `<div style="position:absolute;inset:0;z-index:1;background:${spec.shade}"></div>` : ''}
 <div style="position:absolute;inset:0;z-index:2">${spec.layers || ''}</div>
 ${plane}

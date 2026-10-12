@@ -99,7 +99,36 @@ ${b.name ? `<p style="margin:0;font-family:${FB};font-size:13px;line-height:19px
   );
 }
 
-const BLOCKS = { art, copy, typewall, band, signoff };
+// Price ladder (2fr/1fr/1fr) and a ruled list of other tickets.
+function prices(b) {
+  const cell = ({ label, price }, now) => `<td class="${now ? '' : 'lad-mute'}" valign="top" style="border-top:3px solid ${now ? C.red : '#2A3150'};padding:12px 0 0 0;">
+<p style="margin:0;font-family:${FB};font-size:13px;line-height:18px;font-weight:600;color:${now ? C.text : C.muted};">${label}</p>
+<p class="${now ? 'lad-now' : 'lad-step'}" style="margin:${now ? 10 : 12}px 0 0 0;font-family:${FD};font-weight:900;font-size:${now ? 104 : 38}px;line-height:${now ? 92 : 40}px;color:${now ? C.red : C.muted};mso-line-height-rule:exactly;">${price}</p></td>`;
+  const sub = (inner) => `<table ${T} width="100%" style="width:100%;"><tr>${inner}</tr></table>`;
+  const ladder =
+    b.steps && b.steps.length === 2
+      ? `<table ${T} width="100%" style="width:100%;"><tr>
+<td class="lad-a" width="47%" valign="top" style="width:47%;">${sub(cell(b.now, true))}</td>
+<td class="lad-gap" width="3%" style="width:3%;font-size:0;line-height:0;">&nbsp;</td>
+<td class="lad-b" width="50%" valign="top" style="width:50%;"><table ${T} width="100%" style="width:100%;"><tr>
+<td width="47%" valign="top" style="width:47%;">${sub(cell(b.steps[0]))}</td>
+<td width="6%" style="width:6%;font-size:0;line-height:0;">&nbsp;</td>
+<td width="47%" valign="top" style="width:47%;">${sub(cell(b.steps[1]))}</td>
+</tr></table></td></tr></table>`
+      : `${sub(cell(b.now, true))}<p style="margin:16px 0 0 0;font-family:${FB};font-size:15px;line-height:22px;color:${C.text};">${b.fallback}</p>`;
+  const rows = (b.rows || [])
+    .map(
+      (r, i) => `<tr>
+<td valign="top" style="${i === 0 ? `border-top:1px solid ${C.rule};` : ''}border-bottom:1px solid ${C.rule};padding:13px 12px 13px 0;font-family:${FB};font-size:15px;line-height:22px;font-weight:500;color:${C.text};">${r.label}${r.note ? ` <span style="color:${C.muted};font-weight:400;">${r.note}</span>` : ''}</td>
+<td align="right" valign="top" style="${i === 0 ? `border-top:1px solid ${C.rule};` : ''}border-bottom:1px solid ${C.rule};padding:13px 0;font-family:${FB};font-size:15px;line-height:22px;font-weight:600;color:${C.text};text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;">${r.price}</td>
+</tr>`
+    )
+    .join('');
+  const list = rows ? `<p style="margin:40px 0 12px 0;font-family:${FB};font-size:12px;line-height:16px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:${C.muted};">${b.listTitle}</p><table ${T} width="100%" style="width:100%;">${rows}</table>` : '';
+  return row(`<div mc:edit="prices">${eyebrow(b.eyebrow)}${ladder}${list}</div>`, `44px ${P}px 48px ${P}px`);
+}
+
+const BLOCKS = { art, copy, prices, typewall, band, signoff };
 
 // ---------- frame ----------
 
@@ -144,6 +173,11 @@ const HEAD = `<style type="text/css">
   @media only screen and (max-width:480px) {
     .h2 { font-size:40px !important; line-height:38px !important; }
     .wall { font-size:40px !important; line-height:40px !important; }
+    .lad-a, .lad-b { display:block !important; width:100% !important; }
+    .lad-gap { display:none !important; }
+    .lad-a { padding-bottom:24px !important; }
+    .lad-now { font-size:92px !important; line-height:82px !important; }
+    .lad-step { font-size:34px !important; line-height:36px !important; }
   }
 </style>`;
 
@@ -151,7 +185,7 @@ const MSO_HEAD = `<!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <style type="text/css">
   body, table, td, p, a, span { font-family:Arial, sans-serif !important; }
-  .h2, .wall { font-family:Impact, 'Arial Narrow', Arial, sans-serif !important; }
+  .h2, .wall, .lad-now, .lad-step { font-family:Impact, 'Arial Narrow', Arial, sans-serif !important; }
 </style>
 <![endif]-->`;
 
