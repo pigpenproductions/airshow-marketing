@@ -166,3 +166,39 @@ Photography credit: "Photography: James Hill". Put it once in the footer.
 **2. Purchase tracking.** Turn on the Meta Pixel and GA4 purchase tracking inside the **Weeztix** and **Ticketflex** shop settings, and add the Meta Pixel to Framer (Site Settings > Integrations, or custom code). Without this, Meta ads can't learn which clicks turn into ticket sales.
 
 **3. Ticket checkout opt-in.** In Ticketflex (and Weeztix), change the marketing tick box to cover texts as well as emails, or add a separate texts box. That builds a lawful SMS list from now on.
+
+---
+
+# PASS 2: what's left after the first run
+
+The first pass did: the home hero (Spitfire crops, dates, location, ticket button), the countdown moved under the button,
+the header button changed to GET TICKETS, home and tickets SEO, the share image, and the General Admission wording.
+
+Paste the CONTEXT block, then these one at a time.
+
+## 2A: Small fixes, site-wide
+
+1. Under each countdown number, add a small label: DAYS, HRS, MINS, SECS.
+2. Mobile only: add a sticky bar fixed to the bottom of the screen. "26-27 June 2027" on the left, a red pill "Get tickets" on the right, linking to /tickets. Show it on every page except /tickets. It must not cover the footer links when scrolled to the bottom (add bottom padding to the footer on mobile).
+3. In the footer, add one small line: "Photography: James Hill".
+4. Replace "FUTURE'S DAY" with "Futures & Arrivals Day" everywhere, including the footer.
+
+## 2B: Home page, below the hero
+
+Do steps 1, 2, 3 and 5 of PART 2 exactly as written above (the numbers wall, WHAT'S NEXT on the aerial photo, the Displaying Aircraft and Ground Show card images, and the red closing band). Then remove the word "unforgettable" from the site.
+
+## 2C: Home gallery
+
+Do step 4 of PART 2: the eight-photo gallery, horizontal scroll on mobile, grid on desktop, alt text from the list.
+
+## 2D: Tickets page
+
+Do steps 3, 4, 5 and 7 of PART 3 (card photos, the Under 5s free badge, the extra price list, the opening hours) and fix the remaining wording in step 6.
+
+## 2E: FAQ
+
+Do step 2 of PART 4 (each question appears once, and the opening times match the tickets page).
+
+## 2F: Sign-up (do this last, after you have the Mailchimp form URL)
+
+Do step 1 of PART 4.
