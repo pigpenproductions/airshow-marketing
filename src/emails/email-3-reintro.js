@@ -10,8 +10,9 @@ module.exports = {
   template: 'bold',
   subject: '2026 was the warm-up.',
   campaign: 'hia27_reintro',
-  preheader: 'Bigger show. New theme. Headline acts in the new year. Price held until 31 January.',
-  // A/B subject: 'Headcorn 2027. Same price as 2026.'
+  preheader: 'Bigger show. New theme. Headline acts in the new year. Tickets on sale now.',
+  // A/B subject: 'Headcorn 2027. Tickets on sale now.'
+  // No price comparisons or price deadlines in this email.
   credits: 'Photography: James Hill, Headcorn International Airshow 2026.',
 
   // Artboards: photo + type, rendered to JPEG by scripts/assets.js.
@@ -70,7 +71,7 @@ module.exports = {
       title: 'Bigger show. Bigger ambitions.',
       paragraphs: [
         'Futures &amp; Arrivals Day on Friday 25 June. Then the full show on Saturday 26 and Sunday 27.',
-        'Same price as 2026. Held until 23:59 on Sunday 31 January.',
+        'Tickets are on sale now, from £30 for an adult day.',
       ],
       cta: { label: 'Get tickets', link: 'tickets', utmContent: 'intro_cta' },
     },
@@ -90,7 +91,7 @@ module.exports = {
     {
       type: 'band',
       eyebrow: 'Headcorn 2027',
-      title: 'Same price as 2026. Held until 31 January.',
+      title: 'Tickets on sale now.',
       paragraphs: ['From £30 for an adult day. Every ticket is an <span style="white-space:nowrap;">e-ticket</span>.'],
       label: 'Get tickets',
       link: 'tickets',

@@ -10,7 +10,7 @@ module.exports = {
   template: 'bold',
   subject: 'Put June under the tree.',
   campaign: 'hia27_christmas',
-  preheader: 'A Headcorn 2027 e-ticket, from £30 at 2026 prices.',
+  preheader: 'A Headcorn 2027 e-ticket, from £30.',
   credits: 'Photography: James Hill, Headcorn International Airshow 2026.',
 
   art: [
@@ -35,7 +35,7 @@ module.exports = {
       eyebrow: 'Christmas',
       paragraphs: [
         'Every ticket is an <span style="white-space:nowrap;">e-ticket</span>. Buy one now, give it on Christmas Day.',
-        'From £30 for an adult day, at 2026 prices until 31 January.',
+        'From £30 for an adult day.',
       ],
       label: 'Get tickets',
       link: 'tickets',
