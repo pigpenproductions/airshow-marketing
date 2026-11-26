@@ -6,8 +6,8 @@ Prepared 26 November 2026. Nothing has been sent and no one has been contacted.
 - **Letters:** `letters/embassy-2027/`, 9 one-page A4 PDFs plus the HTML source. They are built by `scripts/embassy-letters.js` from the proven RJF format. To rebuild, run `NODE_PATH=$(npm root -g) node scripts/embassy-letters.js`.
 - **Zoho drafts (saved, not sent):** three emails from alex@headcornairshow.com. For drafts 2 and 3 **the PDFs are not attached**, because the connector could not carry files of this size, so attach the named PDF before sending:
   1. KLuHV: To office@kluhv.nl, Cc staff.sales@kluhv.nl. **A plain email, with no attachment needed.** KLuHV is a volunteer foundation, not a state body, so the formal letter was dropped. The email asks about availability and costs.
-  2. Patrulla ASPA: To the Spanish Defence Office, agredlon@oc.mde.es. Attach `patrulla-aspa-spain.pdf`.
-  3. Hellenic AF Historic Flight: To the Greek Defence Attaché's Office, London_defatt@navy.mil.gr. Attach `hellenic-af-historic-flight-greece.pdf`.
+  2. Patrulla ASPA: To the Spanish Defence Office, agredlon@oc.mde.es. Attach `spain-defence-office-participation.pdf`.
+  3. Hellenic AF Historic Flight: To the Greek Defence Attaché's Office, London_defatt@navy.mil.gr. Attach `greece-defence-attache-participation.pdf`.
 
 Contacts come from the **FCDO London Diplomatic List (September 2026)**, the official published list of embassy staff, or from the operator's own website. No personal email address has been guessed.
 
@@ -51,6 +51,8 @@ A USAF flypast or static request through U.S. Air Forces in Europe is a public r
 6. **Whether to add Brazil** (Air Adviser, cabe@bace.org.uk) or **Sweden** (Defence Attaché) as further VIP letters. Both are on the list, but no letter is drafted.
 
 ## Letter style
+
+The tone is diplomatic, cordial and proud of the show. Letters **leave participation open**: they ask what the air arm feels appropriate rather than naming specific aircraft, and they don't lean on wartime history. The only exception is a light mention of the Patrulla ASPA in the Spanish letter.
 
 The formal "I have the honour" letter is used **only for governments and air forces**, where an approvals process expects one. Private or volunteer operators (KLuHV, the Norwegian Historical Squadron and similar) get a short, friendly email that asks directly about availability and costs.
 

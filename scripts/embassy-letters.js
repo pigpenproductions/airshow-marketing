@@ -27,135 +27,108 @@ const details = (extra = []) => [
 
 const HOSPITALITY_ROW = ['Hospitality', 'VIP hospitality on either or both show days, with the opportunity to meet crews on the flightline'];
 
+// Tone: diplomatic, cordial and proud. Leave participation open: do not
+// name specific aircraft or lean on wartime history.
+const SUBJECT = 'Invitation: Headcorn International Airshow, 26–27 June 2027';
+const FORMAL_SUBJECT = 'Formal Invitation: Headcorn International Airshow, 26–27 June 2027';
+const PROUD = 'Following a very successful show in June 2026, we are proud to be bringing together aircraft, crews and visitors from across Europe and beyond once again.';
+const VIP_CLOSE = 'We would be delighted to arrange every detail of your visit, and I look forward to hearing from you.';
+const PART_CLOSE = 'We will support all operational, logistical and hospitality requirements, and we would be honoured to welcome you as our guest. I would be glad to provide anything further your approvals process may require, and I look forward to hearing from you.';
+
+const vip = ({ slug, title, addr, dear, opener, country, force }) => ({
+  slug, title, addr, dear, subject: SUBJECT,
+  body: [
+    opener || 'On behalf of the Headcorn International Airshow, I have the honour of inviting you and a guest to join us as our guests of honour at our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent.',
+    `${PROUD} It would be a great privilege to welcome representatives of ${country} to Headcorn, and we would be delighted to host you.`,
+    `We would also warmly welcome any participation by the ${force} that you feel may be appropriate, and I would be glad to discuss this at your convenience.`,
+  ],
+  extra: [HOSPITALITY_ROW],
+  close: VIP_CLOSE,
+});
+
+const viaPeart = 'Further to Wing Commander Heather Peart’s kind introduction, I have the honour of inviting you and a guest, on behalf of the Headcorn International Airshow, to join us as our guests of honour at our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent.';
+
 const letters = [
   // ---------------- (a) Participation invitations ----------------
   {
-    slug: 'patrulla-aspa-spain',
-    title: 'Patrulla ASPA Invitation',
+    slug: 'spain-defence-office-participation',
+    title: 'Spanish Air Force Invitation',
     addr: ['Captain (N) Rafael Guerra Soler', 'Defence, Naval, Army &amp; Air Attaché', 'Defence Office, Embassy of Spain', '1st Floor, 20 Peel Street', 'London W8 7PD'],
     dear: 'Dear Captain Guerra Soler,',
-    subject: 'Formal Invitation for the Patrulla ASPA: Headcorn International Airshow, 26–27 June 2027',
+    subject: FORMAL_SUBJECT,
     body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of formally inviting the Spanish Air and Space Force’s helicopter display team, the Patrulla ASPA, to take part in our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent, in the United Kingdom. I would be most grateful if you would forward it to the Ejército del Aire y del Espacio.',
-      'Our programme celebrates heritage and variety, and a helicopter formation display would bring something our audience rarely sees. We understand the team is preparing its transition to a new helicopter type, and we would be delighted to welcome whichever aircraft and display suit the team’s 2027 plans.',
-      'We will support all of the team’s operational, logistical and hospitality requirements, including transit, accommodation and ground handling.',
+      'On behalf of the Headcorn International Airshow, I have the honour of formally inviting the Spanish Air and Space Force to take part in our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent, in the United Kingdom. I would be most grateful if you would kindly forward this invitation to the Ejército del Aire y del Espacio.',
+      `${PROUD} We have long admired the Patrulla ASPA, and it would be an honour to welcome the team should its programme allow, though we would be delighted to discuss any participation the Air and Space Force feels appropriate.`,
     ],
-    extra: [],
-    close: 'We are writing well ahead of the season so the invitation can fit the team’s approvals, and I look forward to hearing from you.',
+    extra: [HOSPITALITY_ROW],
+    close: PART_CLOSE,
   },
   {
-    slug: 'hellenic-af-historic-flight-greece',
-    title: 'Hellenic Historic Flight Invitation',
+    slug: 'greece-defence-attache-participation',
+    title: 'Hellenic Air Force Invitation',
     addr: ['Mr Sarantos Alexandros Xanthouleas', 'Defence Attaché', 'Defence Attaché’s Office, Embassy of Greece', '1A Holland Park', 'London W11 3TP'],
     dear: 'Dear Defence Attaché,',
-    subject: 'Formal Invitation for the Hellenic Air Force Historic Flight: Headcorn International Airshow, 26–27 June 2027',
+    subject: FORMAL_SUBJECT,
     body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of formally inviting the Hellenic Air Force to bring its historic aircraft to our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent, in the United Kingdom. I would be most grateful if you would forward it to the Hellenic Air Force.',
-      'Headcorn is a grass aerodrome with a strong heritage character, and our audience has a deep affection for the Spitfire. It would be a great privilege to welcome Spitfire MJ755, delivered to the Royal Hellenic Air Force in 1947, to the skies of Kent, with the T-6 Harvard if plans allow.',
-      'We will support all of the Flight’s operational, logistical and hospitality requirements, including transit, accommodation and ground handling.',
+      'On behalf of the Headcorn International Airshow, I have the honour of formally inviting the Hellenic Air Force to take part in our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent, in the United Kingdom. I would be most grateful if you would kindly forward this invitation to the Hellenic Air Force.',
+      `${PROUD} Our show has a strong heritage character, and we would be delighted to discuss any participation the Hellenic Air Force feels appropriate, whether in the air or on the ground.`,
     ],
-    extra: [],
-    close: 'We are writing well ahead of the season so the invitation can fit the Air Force’s approvals, and I look forward to hearing from you.',
+    extra: [HOSPITALITY_ROW],
+    close: PART_CLOSE,
   },
   {
     slug: 'germany-air-attache-participation',
     title: 'German Armed Forces Invitation',
     addr: ['Colonel Stefan Udo Kleinheyer', 'Air Attaché', 'Embassy of the Federal Republic of Germany', '23 Belgrave Square', 'London SW1X 8PZ'],
     dear: 'Dear Colonel Kleinheyer,',
-    subject: 'Formal Invitation: Headcorn International Airshow, 26–27 June 2027',
+    subject: FORMAL_SUBJECT,
     body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of formally inviting the German Armed Forces to take part in our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent, in the United Kingdom. I would be grateful if you would forward it to the appropriate offices.',
-      'A flypast by one of the German Navy’s new P-8A Poseidon maritime patrol aircraft, or by a Luftwaffe A400M, would give our audience a rare view of these aircraft, and we would equally welcome a helicopter for static display. We will support all operational, logistical and hospitality requirements, and would be honoured to welcome you as our guest.',
+      'On behalf of the Headcorn International Airshow, I have the honour of formally inviting the German Armed Forces to take part in our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent, in the United Kingdom. I would be most grateful if you would kindly forward this invitation to the appropriate offices.',
+      `${PROUD} We would be delighted to discuss any participation the Luftwaffe or the German Navy feels appropriate, whether in the air or on the ground.`,
     ],
     extra: [HOSPITALITY_ROW],
-    close: 'I would be glad to provide anything further your approvals process requires, and I look forward to hearing from you.',
+    close: PART_CLOSE,
   },
 
   // ---------------- (b) VIP hospitality invitations ----------------
-  {
-    slug: 'usa-defense-attache-vip',
-    title: 'US Defense Attaché Invitation',
+  // US, Canada and Australia: HOLD. Send only once the attaché replies to
+  // Wing Commander Peart's introduction.
+  vip({
+    slug: 'usa-defense-attache-vip', title: 'US Defense Attaché Invitation',
     addr: ['Mr Thomas Winkler', 'Defense Attaché', 'Embassy of the United States of America', '33 Nine Elms Lane', 'London SW11 7US'],
-    dear: 'Dear Mr Winkler,',
-    subject: 'Invitation: Headcorn International Airshow, 26–27 June 2027',
-    body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of inviting you, with your Air Attaché and guests, to join us as our VIP guests at the 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent. You may already have seen our invitation, which Wing Commander Heather Peart of the New Zealand High Commission kindly passed to colleagues earlier this year.',
-      'Headcorn has a particular American connection: as RAF Lashenden, it was home in 1944 to the P-51 Mustangs of the US Army Air Forces’ 354th Fighter Group. It would be a privilege to welcome representatives of the United States in that spirit.',
-      'We would also welcome a conversation about US Air Force participation, such as a flypast or static display, and will make the appropriate request through U.S. Air Forces in Europe.',
-    ],
-    extra: [HOSPITALITY_ROW],
-    close: 'We would be delighted to arrange every detail of your visit. I look forward to hearing from you.',
-  },
-  {
-    slug: 'canada-air-force-adviser-vip',
-    title: 'Canadian Air Force Adviser Invitation',
+    dear: 'Dear Mr Winkler,', opener: viaPeart,
+    country: 'the United States', force: 'United States Air Force',
+  }),
+  vip({
+    slug: 'canada-air-force-adviser-vip', title: 'Canadian Air Force Adviser Invitation',
     addr: ['Colonel David Holmes', 'Air Force Adviser', 'Canadian Defence Liaison Staff (London)', 'High Commission of Canada, Canada House', 'Trafalgar Square, London SW1Y 5BJ'],
-    dear: 'Dear Colonel Holmes,',
-    subject: 'Invitation: Headcorn International Airshow, 26–27 June 2027',
-    body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of inviting you and a guest to join us as our VIP guests at the 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent. You may already have seen our invitation, which Wing Commander Heather Peart of the New Zealand High Commission kindly passed to colleagues earlier this year.',
-      'Headcorn has a Canadian history of its own. As RAF Lashenden in 1943, the aerodrome was used by Nos. 403 and 421 Squadrons of the Royal Canadian Air Force. It would be a privilege to welcome representatives of the Royal Canadian Air Force back to Headcorn.',
-      'We would also be delighted to discuss any Royal Canadian Air Force participation, whether a flypast or a static display, should that be possible in 2027.',
-    ],
-    extra: [HOSPITALITY_ROW],
-    close: 'We would be delighted to arrange every detail of your visit. I look forward to hearing from you.',
-  },
-  {
-    slug: 'australia-defence-staff-vip',
-    title: 'Australian Defence Staff Invitation',
+    dear: 'Dear Colonel Holmes,', opener: viaPeart,
+    country: 'Canada and the Royal Canadian Air Force', force: 'Royal Canadian Air Force',
+  }),
+  vip({
+    slug: 'australia-defence-staff-vip', title: 'Australian Defence Staff Invitation',
     addr: ['Air Commodore Matthew Harper', 'Head Australian Defence Staff', 'Australian High Commission', 'Australia House, Strand', 'London WC2B 4LA'],
-    dear: 'Dear Air Commodore Harper,',
-    subject: 'Invitation: Headcorn International Airshow, 26–27 June 2027',
-    body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of inviting you and a guest, together with your Air Force Adviser, to join us as our VIP guests at the 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent. You may already have seen our invitation, which Wing Commander Heather Peart of the New Zealand High Commission kindly passed to colleagues earlier this year.',
-      'Our show brings together historic and modern aircraft from across Europe, and it would be a privilege to welcome representatives of Australia and the Royal Australian Air Force.',
-      'We would also be delighted to discuss any Royal Australian Air Force participation, should an aircraft be in Europe in 2027.',
-    ],
-    extra: [HOSPITALITY_ROW],
-    close: 'We would be delighted to arrange every detail of your visit. I look forward to hearing from you.',
-  },
-  {
-    slug: 'netherlands-air-attache-vip',
-    title: 'Netherlands Air Attaché Invitation',
+    dear: 'Dear Air Commodore Harper,', opener: viaPeart,
+    country: 'Australia and the Royal Australian Air Force', force: 'Royal Australian Air Force',
+  }),
+  vip({
+    slug: 'netherlands-air-attache-vip', title: 'Netherlands Air Attaché Invitation',
     addr: ['Lieutenant Colonel Sander van Hees', 'Air Attaché', 'Embassy of the Kingdom of the Netherlands', '38 Hyde Park Gate', 'London SW7 5DP'],
     dear: 'Dear Lieutenant Colonel van Hees,',
-    subject: 'Invitation: Headcorn International Airshow, 26–27 June 2027',
-    body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of inviting you and a guest to join us as our VIP guests at the 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent.',
-      'We have also written to the Koninklijke Luchtmacht Historische Vlucht to invite its Spitfire, B-25 Mitchell and Harvard to the show, and we would be most grateful for any support you are able to give. We would equally welcome a conversation about Royal Netherlands Air and Space Force participation, such as a helicopter for static display or a flypast.',
-      'It would be a privilege to welcome representatives of the Netherlands to Headcorn, and we will support all operational, logistical and hospitality requirements of any participation.',
-    ],
-    extra: [HOSPITALITY_ROW],
-    close: 'We would be delighted to arrange every detail of your visit. I look forward to hearing from you.',
-  },
-  {
-    slug: 'poland-defence-attache-vip',
-    title: 'Polish Defence Attaché Invitation',
+    country: 'the Netherlands and the Royal Netherlands Air and Space Force', force: 'Royal Netherlands Air and Space Force',
+  }),
+  vip({
+    slug: 'poland-defence-attache-vip', title: 'Polish Defence Attaché Invitation',
     addr: ['Colonel Rafał Artur Nowak', 'Defence, Military, Naval and Air Attaché', 'Embassy of the Republic of Poland', '47 Portland Place', 'London W1B 1JH'],
     dear: 'Dear Colonel Nowak,',
-    subject: 'Invitation: Headcorn International Airshow, 26–27 June 2027',
-    body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of inviting you and a guest to join us as our VIP guests at the 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent.',
-      'Kent remembers the Polish airmen who fought in its skies in 1940, and our show celebrates that heritage alongside modern aviation. It would be a privilege to welcome representatives of Poland and the Polish Air Force as our guests.',
-      'We would also be delighted to discuss any Polish Air Force participation, whether in 2027 or in future years, and we will support all operational, logistical and hospitality requirements of any participation.',
-    ],
-    extra: [HOSPITALITY_ROW],
-    close: 'We would be delighted to arrange every detail of your visit. I look forward to hearing from you.',
-  },
-  {
-    slug: 'france-air-space-attache-vip',
-    title: 'French Air Attaché Invitation',
+    country: 'Poland and the Polish Air Force', force: 'Polish Air Force, whether in 2027 or in future years,',
+  }),
+  vip({
+    slug: 'france-air-space-attache-vip', title: 'French Air Attaché Invitation',
     addr: ['Mr Emmanuel Emond', 'Air &amp; Space Attaché', 'Defence Mission, Embassy of France', '58 Knightsbridge', 'London SW1X 7JT'],
     dear: 'Dear Mr Emond,',
-    subject: 'Invitation: Headcorn International Airshow, 26–27 June 2027',
-    body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of inviting you and a guest to join us as our VIP guests at the 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent.',
-      'Headcorn lies a short flight from the French coast, and our show brings together historic and modern aircraft from across Europe. It would be a privilege to welcome representatives of France and the Armée de l’Air et de l’Espace as our guests.',
-      'We would also be delighted to discuss any participation by the Armée de l’Air et de l’Espace or the Marine nationale, whether a flypast or a static display, and we will support all operational, logistical and hospitality requirements of any participation.',
-    ],
-    extra: [HOSPITALITY_ROW],
-    close: 'We would be delighted to arrange every detail of your visit. I look forward to hearing from you.',
-  },
+    country: 'France and the Armée de l’Air et de l’Espace', force: 'Armée de l’Air et de l’Espace or the Marine nationale',
+  }),
 ];
 
 const css = fs.readFileSync(path.join(__dirname, '..', 'letters', 'rjf-invitation-2027.html'), 'utf8')
