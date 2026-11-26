@@ -11,21 +11,23 @@ Prepared 26 November 2026. Nothing has been sent and no one has been contacted.
 
 Contacts come from the **FCDO London Diplomatic List (September 2026)**, the official published list of embassy staff, or from the operator's own website. No personal email address has been guessed.
 
-## Who to approach first, and why
+## Who to approach, ranked by potential against cost
 
-| # | Target | Letter | Why first |
-|---|---|---|---|
-| 1 | **US Defense Attaché** (VIP), followed by a USAFE request | `usa-defense-attache-vip` | The air attaché already has your invitation via the NZ adviser, so follow it up while it is warm. Headcorn was RAF Lashenden, home of the USAAF 354th Fighter Group's P-51s in 1944. USAFE is the gateway to any USAF flypast or static. |
-| 2 | **Canadian Air Force Adviser** (VIP) | `canada-air-force-adviser-vip` | Also received the NZ forward. 403 and 421 Squadrons RCAF flew from Lashenden in 1943, which is a ready-made story. |
-| 3 | **Australian Defence Staff** (VIP) | `australia-defence-staff-vip` | Also received the NZ forward. The Head is an Air Commodore. |
-| 4 | **KLu Historische Vlucht** (Spitfire, B-25, Harvard) and the **NL Air Attaché** (VIP) | plain email (Zoho draft), `netherlands-air-attache-vip` | This is the best heritage and variety fit found: a twin bomber plus a Spitfire, and light grass types for arrivals day. KLuHV is a private volunteer foundation, **not state-funded**, and prices events individually, so expect costs. Ask the NL Air Attaché for the government-funded part, such as an RNLAF static or flypast. |
-| 5 | **Patrulla ASPA** (Spanish helicopter team) | `patrulla-aspa-spain` | Adds rotary variety, and the team does travel abroad (South America, 2026). |
-| 6 | **Hellenic AF Spitfire MJ755 and Harvard** | `hellenic-af-…` | A long shot, but a strong story if it comes off. |
-| 7 | **German Air Attaché**: P-8A Poseidon or A400M flypast, helicopter static | `germany-air-attache-participation` | Maritime patrol and transport are missing from the programme, and the P-8A is new in German service. This is a speculative ask. |
-| 8 | **Polish Defence Attaché** (VIP) | `poland-defence-attache-vip` | Battle of Britain and Kent link. Polish display flying is restricted after the 2025 F-16 accident, so treat this as groundwork for 2028. |
-| 9 | **French Air & Space Attaché** (VIP) | `france-air-space-attache-vip` | France has the nearest foreign air force, so this opens a door for future flypasts. |
+**Hold: the US, Australian and Canadian air attachés.** On 24 Nov 2026 Wing Commander Peart forwarded your invitation to them and asked them to contact you directly if they are interested, and you replied the same day. Writing to them now would go around her, so wait for them to get in touch. The three VIP letters (`usa-…`, `canada-…`, `australia-…`) are ready to send as the formal invitation **once an attaché replies**. If nothing has come by mid-January, a light check-in with Heather is the right move, not a direct approach.
 
-Thank the NZ air adviser (WGCDR Heather Peart, per the Diplomatic List) when the AUS, CAN and US letters go. They mention her forward.
+Send these, in this order:
+
+| # | Who | Potential | Cost to HIA | Why |
+|---|---|---|---|---|
+| 1 | **Dutch Air Attaché** (VIP letter) | Medium–high | Low | A close neighbour. A Dutch air force AH-64E Apache was a static at RAF Cosford in 2026. This is the route to government-funded Dutch participation, and it supports the KLuHV ask. |
+| 2 | **German Air Attaché** (participation and VIP) | Medium | Low | A P-8A Poseidon or A400M flypast would be at German state cost. Speculative, but only a letter. |
+| 3 | **French Air & Space Attaché** (VIP) | Low–medium | Low | France is the nearest foreign air force. Opens a door for 2028 and later. |
+| 4 | **Patrulla ASPA, via the Spanish Defence Office** | Medium | Medium–high | The state pays for the aircraft, but you would likely host a large crew. The team is changing helicopter type, so 2027 availability is uncertain. |
+| 5 | **Polish Defence Attaché** (VIP) | Low (2027) | Low | Polish display flying is restricted since the 2025 accident. Groundwork for 2028. |
+| 6 | **Greek AF Spitfire, via the Defence Attaché** | Low | Medium–high | A strong story, but there's no sign the Spitfire has flown outside Greece, and it may come with ferry costs. |
+| — | **KLuHV** (plain email) | High | **High** | A private, paid booking. Send only once you've decided on a heritage budget. |
+
+A USAF flypast or static request through U.S. Air Forces in Europe is a public request process and doesn't go through the attaché, so you can make it independently. Check first what costs USAFE would pass on.
 
 ## Deadlines
 
