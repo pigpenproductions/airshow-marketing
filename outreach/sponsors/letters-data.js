@@ -22,16 +22,6 @@ const generic = {
 
 const letters = [
   {
-    slug: 'shepherd-neame',
-    title: 'HIA 2027 Sponsor Proposal: Shepherd Neame',
-    address: ['[Name]', 'Head of Sponsorship', 'Shepherd Neame Ltd', 'Faversham, Kent', '[Postal address to confirm]'],
-    salutation: 'Dear [Name],',
-    orgShort: 'Shepherd Neame',
-    why: 'Few brands share our story as closely. Spitfire is one of your best-known beers and your name is on the Spitfire Ground at Canterbury. Your sponsorship of Kent Cricket and of events across the county shows the same belief we hold: that Kent’s own businesses should be at the heart of Kent’s big days out.',
-    suggested: 'presenting',
-    ask: 'For Shepherd Neame we would propose the Presenting Partner role, with the option of a named warbird display slot, subject to our final 2027 line-up. [Alex: confirm how to reference the current Shepherd Neame and The Plough relationship.]',
-  },
-  {
     slug: 'bremont',
     title: 'HIA 2027 Sponsor Proposal: Bremont',
     address: ['[Name]', 'Head of Partnerships', 'Bremont Watch Company', 'Henley-on-Thames, Oxfordshire', '[Postal address to confirm]'],
@@ -120,6 +110,16 @@ const letters = [
     why: 'Your UL91 avgas and your support for aerobatic competition pilots put TotalEnergies at the centre of light aviation in the UK. Headcorn is a working general aviation aerodrome, and our show brings pilots, owners and families together around the aircraft your fuel keeps flying.',
     suggested: 'display',
     ask: 'For TotalEnergies we would propose a Display Partnership naming our aerobatic display, with a stand to talk to pilots and owners, and a role in our Futures &amp; Arrivals Day.',
+  },
+  {
+    slug: 'brands-hatch-morgans',
+    title: 'HIA 2027 Sponsor Proposal: Brands Hatch Morgans',
+    address: ['[Name]', 'Dealer Principal', 'Brands Hatch Morgans', '45 Maidstone Road, Borough Green', 'Sevenoaks, Kent TN15 8HA'],
+    salutation: 'Dear [Name],',
+    orgShort: 'Brands Hatch Morgans',
+    why: 'Vintage cars on the flightline are part of what makes Headcorn different, and few cars sit as naturally beside a vintage warbird as a Morgan. Our visitors are enthusiasts with a love of British engineering and heritage, many of them from across Kent and the South East, which makes them the customers a Kent Morgan dealer wants to meet.',
+    suggested: 'supporting',
+    ask: 'For Brands Hatch Morgans we would propose a Supporting Partnership: a Morgan display on the vintage car flightline across both show days, with your name in our programme and visitor information.',
   },
 ];
 
