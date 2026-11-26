@@ -1,4 +1,5 @@
-// Builds the 2027 embassy / air-arm invitation letters from the proven
+// Builds the 2027 embassy / air-arm invitation letters (state bodies only;
+// private or volunteer operators such as KLuHV get a plain email instead) from the proven
 // RJF letter format (letters/rjf-invitation-2027.html) and renders each to
 // a one-page A4 PDF with the pre-installed Playwright Chromium.
 //
@@ -28,21 +29,6 @@ const HOSPITALITY_ROW = ['Hospitality', 'VIP hospitality on either or both show 
 
 const letters = [
   // ---------------- (a) Participation invitations ----------------
-  {
-    slug: 'kluhv-netherlands-historic-flight',
-    title: 'KLu Historic Flight Invitation',
-    addr: ['The Board', 'Stichting Koninklijke Luchtmacht Historische Vlucht', 'Gilze-Rijen Air Base', 'Postbus 229, 5120 AE Rijen', 'The Netherlands'],
-    dear: 'Dear Members of the Board,',
-    subject: 'Formal Invitation: Headcorn International Airshow, 26–27 June 2027',
-    body: [
-      'On behalf of the Headcorn International Airshow, I have the honour of formally inviting the Koninklijke Luchtmacht Historische Vlucht to take part in our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent, in the United Kingdom.',
-      'Headcorn is a grass aerodrome with a strong heritage character; as RAF Lashenden it served the RAF, the Royal Canadian Air Force and the US Army Air Forces in 1943–44. It would be a great privilege to welcome your Spitfire Mk IX, B-25 Mitchell and Harvard to our flying display, and we would equally welcome your lighter types, subject to your crews’ assessment of our runway.',
-      'We will support all of the Flight’s operational, logistical and hospitality requirements, including arrival and departure arrangements, accommodation and ground handling.',
-    ],
-    extra: [],
-    close: 'We are writing early so this invitation fits your season planning, and I look forward to hearing from you.',
-    cc: 'Copy: Air Attaché, Embassy of the Kingdom of the Netherlands, London',
-  },
   {
     slug: 'patrulla-aspa-spain',
     title: 'Patrulla ASPA Invitation',
