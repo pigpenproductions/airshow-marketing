@@ -8,7 +8,7 @@
   @page { size: A4; margin: 0; }
   :root {
     --ink: #07090F; --panel: #0E1222; --text: #F4F5F8; --muted: #9AA3BD;
-    --red: #D40F0F; --paper: #FFFFFF; --body: #2B3042; --grey: #6B7185; --line: #DADDE5;
+    --red: #D40F0F; --paper: #FFFFFF; --body: #2B3042; --grey: #6B7185; --line: #DADDE5; --cream: #F3EEE2; --cream2: #E9E1CF; --gold: #C4A04E;
     --FD: 'Big Shoulders Display', Impact, sans-serif;
     --FB: 'Geist', Arial, sans-serif;
   }
@@ -36,8 +36,7 @@
   .cover .shade { position: absolute; inset: 0;
     background: linear-gradient(180deg, rgba(7,9,15,0.55) 0%, rgba(7,9,15,0) 22%, rgba(7,9,15,0) 42%, rgba(7,9,15,0.92) 66%, #07090F 80%); }
   .cover .top { position: absolute; top: 12mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; align-items: center; }
-  .cover .plate { width: 21mm; height: 21mm; border-radius: 50%; background: #fff; display: grid; place-items: center; }
-  .cover .plate img { width: 18mm; }
+  .cover .logo { width: 28mm; display: block; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.45)); }
   .cover .top span { font-size: 7.6pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
   .cover .foot { position: absolute; left: 16mm; right: 16mm; bottom: 14mm; }
   .cover h1 { font-size: 74pt; color: var(--text); }
@@ -65,33 +64,52 @@
   .reasons .n { font-family: var(--FD); font-weight: 900; font-size: 20pt; color: var(--red); line-height: 1; margin-bottom: 2mm; }
 
   /* Photo strip */
-  .strip { position: relative; height: 62mm; overflow: hidden; }
+  .strip { position: relative; height: 44mm; overflow: hidden; }
   .strip img { width: 100%; height: 100%; object-fit: cover; }
   .credit { position: absolute; right: 4mm; bottom: 2.5mm; font-size: 6.4pt; color: rgba(255,255,255,0.8); letter-spacing: 0.04em; text-shadow: 0 0 3px rgba(0,0,0,0.7); }
 
   /* Packages */
   table { width: 100%; border-collapse: collapse; }
-  .pk th { text-align: left; font-size: 7pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); padding: 0 3mm 2.5mm 0; border-bottom: 2px solid var(--ink); }
-  .pk td { padding: 3.4mm 3mm 3.4mm 0; border-bottom: 1px solid var(--line); vertical-align: top; }
-  .pk td.name { font-weight: 600; color: var(--ink); width: 39mm; }
-  .pk td.price { font-family: var(--FD); font-weight: 900; font-size: 15pt; line-height: 1; color: var(--ink); width: 23mm; white-space: nowrap; }
-  .pk td.avail { width: 16mm; color: var(--grey); font-size: 8.4pt; }
-  .pk tr.lead td.price, .pk tr.lead td.name { color: var(--red); }
+  .pk { border-collapse: separate; border-spacing: 0 1.2mm; margin-top: -1.2mm; }
+  .pk th { text-align: left; font-size: 7pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); padding: 0 3mm 0.6mm 3.5mm; }
+  .pk td { padding: 2.2mm 3.5mm; vertical-align: top; background: var(--cream); }
+  .pk td.name { font-weight: 600; color: var(--ink); width: 40mm; }
+  .pk td.price { font-family: var(--FD); font-weight: 900; font-size: 15pt; line-height: 1; color: var(--ink); width: 27mm; white-space: nowrap; background: var(--cream2); }
+  .pk td.avail { width: 14mm; color: var(--ink); font-size: 8.4pt; font-weight: 600; text-align: center; background: var(--cream2); }
+  .pk tr.lead td { background: var(--ink); color: var(--text); }
+  .pk tr.lead td.name { color: var(--gold); }
+  .pk tr.lead td.price { color: var(--gold); background: #141826; }
+  .pk tr.lead td.avail { color: var(--text); background: #141826; }
   .pk td .note { display: block; font-size: 8pt; color: var(--grey); margin-top: 0.8mm; }
+  .pk tr.lead td .note { color: var(--muted); }
+  .pk td .val { display: inline-block; margin-top: 0.6mm; font-size: 7.4pt; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); }
+  .pk tr.lead td .val { color: var(--gold); }
 
-  .terms { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm; margin-top: 8mm; }
-  .term { border-top: 3px solid var(--red); padding-top: 3mm; }
+  .terms { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-top: 4mm; }
+  /* Flight-progress strips: a coded tab, a perforation, then the detail */
+  .strip-card { display: grid; grid-template-columns: 11mm 1fr; background: var(--cream); }
+  .strip-card .tab { background: var(--ink); color: var(--gold); font-family: var(--FD); font-weight: 900; font-size: 11pt; letter-spacing: 0.04em;
+    writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; padding: 2.5mm 0; text-transform: uppercase; }
+  .strip-card .body { padding: 2.6mm 3.4mm 2.8mm 3.4mm; border-left: 1.4px dashed #BFB39A; }
+  .strip-card .body p { font-size: 8.8pt; }
 
   /* Matrix */
-  .mx { font-size: 8pt; }
-  .mx th { font-size: 7pt; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); background: var(--ink); padding: 2.6mm 2mm; text-align: center; }
-  .mx th:first-child { text-align: left; }
-  .mx td { padding: 1.7mm 2mm; border-bottom: 1px solid var(--line); text-align: center; color: var(--body); }
-  .mx td:first-child { text-align: left; font-weight: 600; color: var(--ink); width: 35mm; }
-  .mx td.no { color: #B8BCC8; }
+  .mx { font-size: 8pt; border-collapse: separate; border-spacing: 0.9mm; margin: -0.9mm; width: calc(100% + 1.8mm); }
+  .mx th { font-size: 7pt; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); background: var(--ink); padding: 2.4mm 1.6mm; text-align: center; vertical-align: bottom; }
+  .mx th:first-child { background: transparent; }
+  .mx th.t { color: var(--gold); }
+  .mx td { padding: 1.9mm 1.6mm; text-align: center; color: var(--body); background: var(--cream); }
+  .mx td:first-child { text-align: left; font-weight: 600; color: var(--ink); width: 33mm; background: var(--cream2); }
+  .mx td:nth-child(2) { background: #EADFC4; color: var(--ink); font-weight: 600; }
+  .mx td.no { color: #B9AE96; }
+  .mx tr.v td { font-weight: 600; color: var(--red); }
+  .mx tr.v td.no { color: #B9AE96; font-weight: 400; }
+  .mx tr.v td:first-child { color: var(--ink); }
 
   .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm 10mm; margin-top: 2mm; }
-  .fit div { padding: 2mm 0; border-top: 1px solid var(--line); }
+  .fit { gap: 2.4mm 3mm; }
+  .fit .strip-card .body { padding: 2.4mm 3.4mm 2.6mm 3.4mm; }
+  .fit .strip-card .tab { font-size: 9.5pt; }
 
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; }
   .steps .d { font-family: var(--FD); font-weight: 900; font-size: 15pt; color: var(--ink); line-height: 1; margin-bottom: 1.5mm; text-transform: uppercase; }
@@ -105,6 +123,7 @@
   .folio { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 6.8pt; color: var(--grey); letter-spacing: 0.06em; }
   .p4 .rule { margin: 5mm 0; }
   .p4 h2 { font-size: 26pt; margin-bottom: 4mm; }
+  .p4 .mx td { padding: 1.5mm 1.6mm; }
 </style>
 </head>
 <body>
@@ -114,7 +133,7 @@
   <img class="bg" src="../assets/photos/spitfire-flypast.jpg" alt="Spitfire FX-M Spirit of Kent in flight over Headcorn">
   <div class="shade"></div>
   <div class="top">
-    <div class="plate"><img src="../assets/hia-logo.png" alt="Headcorn International Airshow"></div>
+    <img class="logo" src="../assets/hia-logo-gold.png" alt="Headcorn International Airshow">
     <span>Partnership pack 2027</span>
   </div>
   <div class="foot">
@@ -154,7 +173,7 @@
       <div>
         <div class="eyebrow">The premium audience</div>
         <h3>1,083 hospitality guests</h3>
-        <p>Across the Mustang Lounge and Fighter Row in 2026. The Mustang Lounge nearly sold out both days, at 267 and 262 of 300 places.</p>
+        <p>Across the Mustang Lounge and Fighter Row in 2026. The Mustang Lounge nearly sold out both days, at 267 and 262 of 300 places. A weekend in the lounge is close to £250 a head at early-bird prices, and people still buy it months ahead.</p>
         <p>These are the people who plan early, spend more, and bring clients and family. Partners at enclosure level host alongside them.</p>
         <h3 style="margin-top:4mm">2027: growing to around 10,500 attendance-days</h3>
         <p>More international acts, a bigger media operation and a heavier final-month campaign. Partners signed by 31 March are on all of it.</p>
@@ -180,15 +199,15 @@
     <img src="../assets/photos/mustang-qi-close.jpg" alt="Polished nose of P-51 Mustang QI at Headcorn" style="object-position:50% 45%">
     <span class="credit">P-51 Mustang QI, HIA 2026. Photo: James Hill</span>
   </div>
-  <div class="pad" style="padding-top:11mm">
+  <div class="pad" style="padding-top:9mm">
     <div class="eyebrow">Packages</div>
     <h2>One title partner.<br>A handful of the rest.</h2>
 
     <table class="pk">
       <thead><tr><th>Package</th><th>From (+VAT)</th><th>Available</th><th>What it is</th></tr></thead>
       <tbody>
-        <tr class="lead"><td class="name">Title partner</td><td class="price">£15,000</td><td class="avail">1</td><td>"Headcorn International Airshow, presented by [you]" on every poster, ad and ticket. Prime site and 20 Mustang Lounge places a day.</td></tr>
-        <tr><td class="name">Mustang Lounge partner</td><td class="price">£7,500</td><td class="avail">1</td><td>The premium enclosure carries your name. 10 lounge places a day for clients or staff.</td></tr>
+        <tr class="lead"><td class="name">Title partner</td><td class="price">£15,000</td><td class="avail">1</td><td>"Headcorn International Airshow, presented by [you]" on every poster, ad and ticket. Prime site and 20 Mustang Lounge places a day.<br><span class="val">Includes c. £5,000 of hospitality</span></td></tr>
+        <tr><td class="name">Mustang Lounge partner</td><td class="price">£7,500</td><td class="avail">1</td><td>The premium enclosure carries your name. 10 lounge places a day for clients or staff.<br><span class="val">Includes c. £2,500 of hospitality</span></td></tr>
         <tr><td class="name">Fighter Row partner</td><td class="price">£5,000</td><td class="avail">1</td><td>Naming of the crowdline enclosure, with a stand on the crowdline itself.</td></tr>
         <tr><td class="name">Futures Day partner</td><td class="price">£5,000</td><td class="avail">1</td><td>Friday's veterans, schools and careers day. Built for engineering, aviation and defence employers who are hiring.</td></tr>
         <tr><td class="name">Display partner</td><td class="price">£2,500</td><td class="avail">8</td><td>Your name on one aircraft's display: commentary credit, programme page and announcement post.<span class="note">Aircraft are allocated in signing order once the lineup is confirmed.</span></td></tr>
@@ -198,9 +217,9 @@
     </table>
 
     <div class="terms">
-      <div class="term"><h3>Two-year partners</h3><p>Sign for 2027 and 2028 together and the 2028 fee stays at the 2027 price. First refusal on your package for 2029.</p></div>
-      <div class="term"><h3>Built to brief</h3><p>From £10,000. If none of these fit, we design one around your objective: a product launch, a recruitment push, a client weekend.</p></div>
-      <div class="term"><h3>In kind</h3><p>Transport, fuel, accommodation, print and radio count, valued at the package they replace. Beer and pleasure flights are taken.</p></div>
+      <div class="strip-card"><div class="tab">2 years</div><div class="body"><h3>Two-year partners</h3><p>Sign for 2027 and 2028 together and the 2028 fee stays at the 2027 price. First refusal on your package for 2029.</p></div></div>
+      <div class="strip-card"><div class="tab">Bespoke</div><div class="body"><h3>Built to brief</h3><p>From £10,000. If none of these fit, we design one around your objective: a product launch, a recruitment push, a client weekend.</p></div></div>
+      <div class="strip-card"><div class="tab">In kind</div><div class="body"><h3>In kind</h3><p>Transport, fuel, accommodation, print and radio count, valued at the package they replace. Beer and pleasure flights are taken.</p></div></div>
     </div>
   </div>
   <div class="folio"><span>All prices exclude VAT. Hospitality places are per show day.</span><span>3</span></div>
@@ -212,10 +231,11 @@
     <div class="eyebrow">What partners get</div>
     <h2>Side by side.</h2>
     <table class="mx">
-      <thead><tr><th></th><th>Title</th><th>Mustang Lounge</th><th>Fighter Row</th><th>Futures Day</th><th>Display</th><th>Community</th></tr></thead>
+      <thead><tr><th></th><th class="t">Title</th><th>Mustang Lounge</th><th>Fighter Row</th><th>Futures Day</th><th>Display</th><th>Community</th></tr></thead>
       <tbody>
         <tr><td>Name on</td><td>The show</td><td>Lounge</td><td>Fighter Row</td><td>Friday</td><td>One aircraft</td><td class="no">-</td></tr>
         <tr><td>Hospitality per day</td><td>20 Mustang Lounge</td><td>10 Mustang Lounge</td><td>10 Fighter Row</td><td>10 on Friday</td><td>4 Fighter Row</td><td>4 GA tickets</td></tr>
+        <tr class="v"><td>Hospitality value</td><td>c. £5,000</td><td>c. £2,500</td><td class="no">-</td><td class="no">-</td><td class="no">-</td><td class="no">-</td></tr>
         <tr><td>Commentary mentions</td><td>Every hour</td><td>4 a day</td><td>4 a day</td><td>Friday</td><td>In its display</td><td class="no">-</td></tr>
         <tr><td>Social posts</td><td>6</td><td>3</td><td>2</td><td>2</td><td>1</td><td class="no">-</td></tr>
         <tr><td>Newsletter features</td><td>2</td><td>1</td><td>1</td><td>1</td><td>Mention</td><td class="no">-</td></tr>
@@ -224,16 +244,16 @@
         <tr><td>Post-show report</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
       </tbody>
     </table>
-    <p class="small" style="margin-top:3mm">Every package includes a logo on the website, in the programme and on the on-site partner banner. Bring your own activity: sampling, test drives, demonstrations, recruitment stands.</p>
+    <p class="small" style="margin-top:3mm">Hospitality value is Mustang Lounge weekend places at the 2027 early-bird price. Every package includes a logo on the website, in the programme and on the on-site partner banner. Bring your own activity: sampling, test drives, demonstrations, recruitment stands.</p>
 
     <hr class="rule">
 
     <div class="eyebrow">Who it fits</div>
     <div class="fit">
-      <div><h3>Engineering, aviation and defence</h3><p>Futures Day puts you in front of schools, cadets and career-changers, with veterans in the same tent.</p></div>
-      <div><h3>Cars, outdoor and leisure</h3><p>Display vehicles and test drives on a crowdline full of families with a day to spare.</p></div>
-      <div><h3>Professional services and finance</h3><p>A named enclosure and a block of hospitality places. A client day that doesn't feel like one.</p></div>
-      <div><h3>Kent businesses</h3><p>Community supporter and programme pages. Your name in front of 61% of the crowd that lives in the county.</p></div>
+      <div class="strip-card"><div class="tab">ENG</div><div class="body"><h3>Engineering, aviation and defence</h3><p>Futures Day puts you in front of schools, cadets and career-changers, with veterans in the same tent.</p></div></div>
+      <div class="strip-card"><div class="tab">AUTO</div><div class="body"><h3>Cars, outdoor and leisure</h3><p>Display vehicles and test drives on a crowdline full of families with a day to spare.</p></div></div>
+      <div class="strip-card"><div class="tab">B2B</div><div class="body"><h3>Professional services and finance</h3><p>A named enclosure and a block of hospitality places. A client day that doesn't feel like one.</p></div></div>
+      <div class="strip-card"><div class="tab">KENT</div><div class="body"><h3>Kent businesses</h3><p>Community supporter and programme pages. Your name in front of 61% of the crowd that lives in the county.</p></div></div>
     </div>
 
     <hr class="rule">
@@ -250,7 +270,7 @@
   <div class="close">
     <div class="wall">Packages go<br>in signing order.</div>
     <div class="who">
-      <b>Alex Yates</b>, Event Director<br>
+      <b>Alexander Yates</b>, Event Director<br>
       alex@headcornairshow.com<br>
       +44 (0)7766 544 388<br>
       headcornairshow.com
