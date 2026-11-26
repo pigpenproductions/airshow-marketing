@@ -4,10 +4,9 @@ Prepared 26 November 2026. Nothing has been sent and no one has been contacted.
 
 - **Target list:** [`target-list.csv`](target-list.csv) has 16 researched targets plus the 5 existing contacts. Each row gives the route in, the published official contact, its source, the deadline, the priority and what is unverified.
 - **Letters:** `letters/embassy-2027/`, 9 one-page A4 PDFs plus the HTML source. They are built by `scripts/embassy-letters.js` from the proven RJF format. To rebuild, run `NODE_PATH=$(npm root -g) node scripts/embassy-letters.js`.
-- **Zoho drafts (saved, not sent):** three emails from alex@headcornairshow.com. For drafts 2 and 3 **the PDFs are not attached**, because the connector could not carry files of this size, so attach the named PDF before sending:
-  1. KLuHV: To office@kluhv.nl, Cc staff.sales@kluhv.nl. **A plain email, with no attachment needed.** KLuHV is a volunteer foundation, not a state body, so the formal letter was dropped. The email asks about availability and costs.
-  2. Patrulla ASPA: To the Spanish Defence Office, agredlon@oc.mde.es. Attach `spain-defence-office-participation.pdf`.
-  3. Hellenic AF Historic Flight: To the Greek Defence Attaché's Office, London_defatt@navy.mil.gr. Attach `greece-defence-attache-participation.pdf`.
+- **Letters build on 2026 correspondence.** Greece, Belgium, Portugal, the Netherlands and Spain were all contacted in early 2026, so their letters acknowledge the earlier exchange. A private log of the 2026 threads is kept outside the repo. Check it before contacting anyone.
+- **Zoho drafts (saved, not sent):** Greece, Belgium, Portugal, the Netherlands and Spain, each as a reply in the existing thread where there is one. Attach the named PDF before sending. The direct KLuHV email is ON HOLD: the 2026 request went through the Dutch air attaché.
+- **New letters:** `greece-hafgs-participation`, `belgium-defence-attache-participation`, `portugal-defence-attache-participation`.
 
 Contacts come from the **FCDO London Diplomatic List (September 2026)**, the official published list of embassy staff, or from the operator's own website. No personal email address has been guessed.
 
