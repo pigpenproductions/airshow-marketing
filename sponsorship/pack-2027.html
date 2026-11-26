@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Headcorn 2027 Partnership Pack</title>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #07090F; --panel: #0E1222; --text: #F4F5F8; --muted: #9AA3BD;
+    --red: #D40F0F; --paper: #FFFFFF; --body: #2B3042; --grey: #6B7185; --line: #DADDE5;
+    --FD: 'Big Shoulders Display', Impact, sans-serif;
+    --FB: 'Geist', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); }
+  body { font-family: var(--FB); color: var(--body); font-size: 9.6pt; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; font-variant-numeric: tabular-nums; }
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  .pad { padding: 16mm 16mm 0 16mm; }
+
+  .eyebrow { font-size: 7.6pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 3.5mm; }
+  h1, h2, .wall { font-family: var(--FD); font-weight: 900; text-transform: uppercase; line-height: 0.92; }
+  h2 { font-size: 30pt; color: var(--ink); margin-bottom: 5mm; }
+  h3 { font-size: 10pt; font-weight: 600; color: var(--ink); margin-bottom: 1.5mm; }
+  p + p { margin-top: 2.5mm; }
+  .lede { font-size: 11.5pt; line-height: 1.5; color: var(--ink); }
+  .small { font-size: 7.8pt; color: var(--grey); line-height: 1.45; }
+  .red { color: var(--red); }
+  .rule { border: 0; border-top: 1px solid var(--line); margin: 7mm 0; }
+
+  /* Cover */
+  .cover { background: var(--ink); color: var(--text); }
+  .cover img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+  .cover .shade { position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(7,9,15,0.55) 0%, rgba(7,9,15,0) 22%, rgba(7,9,15,0) 42%, rgba(7,9,15,0.92) 66%, #07090F 80%); }
+  .cover .top { position: absolute; top: 12mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; align-items: center; }
+  .cover .plate { width: 21mm; height: 21mm; border-radius: 50%; background: #fff; display: grid; place-items: center; }
+  .cover .plate img { width: 18mm; }
+  .cover .top span { font-size: 7.6pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+  .cover .foot { position: absolute; left: 16mm; right: 16mm; bottom: 14mm; }
+  .cover h1 { font-size: 74pt; color: var(--text); }
+  .cover h1 .red { display: block; }
+  .cover .sub { margin-top: 6mm; font-size: 11.5pt; line-height: 1.5; color: var(--text); max-width: 140mm; }
+  .cover .meta { margin-top: 8mm; padding-top: 4mm; border-top: 1px solid rgba(244,245,248,0.22);
+    display: flex; justify-content: space-between; font-size: 8pt; color: var(--muted); }
+  .cover .meta b { color: var(--text); font-weight: 600; }
+
+  /* Numbers wall */
+  .wallblock { background: var(--ink); color: var(--text); padding: 12mm 16mm 11mm 16mm; }
+  .wallblock .wall { font-size: 33pt; color: var(--text); }
+  .wallblock .wall .red { color: var(--red); }
+  .wallblock p.after { margin-top: 5mm; font-size: 9pt; color: var(--muted); max-width: 150mm; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; }
+  .bars { margin-top: 3mm; }
+  .bar { display: grid; grid-template-columns: 30mm 1fr 11mm; align-items: center; gap: 3mm; padding: 1.5mm 0; font-size: 8.8pt; }
+  .bar .track { height: 2.2mm; background: #EEF0F4; }
+  .bar .fill { height: 100%; background: var(--ink); }
+  .bar .fill.k { background: var(--red); }
+  .bar b { text-align: right; font-weight: 600; color: var(--ink); }
+
+  .reasons { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7mm; }
+  .reasons .n { font-family: var(--FD); font-weight: 900; font-size: 20pt; color: var(--red); line-height: 1; margin-bottom: 2mm; }
+
+  /* Photo strip */
+  .strip { position: relative; height: 62mm; overflow: hidden; }
+  .strip img { width: 100%; height: 100%; object-fit: cover; }
+  .credit { position: absolute; right: 4mm; bottom: 2.5mm; font-size: 6.4pt; color: rgba(255,255,255,0.8); letter-spacing: 0.04em; text-shadow: 0 0 3px rgba(0,0,0,0.7); }
+
+  /* Packages */
+  table { width: 100%; border-collapse: collapse; }
+  .pk th { text-align: left; font-size: 7pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); padding: 0 3mm 2.5mm 0; border-bottom: 2px solid var(--ink); }
+  .pk td { padding: 3.4mm 3mm 3.4mm 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .pk td.name { font-weight: 600; color: var(--ink); width: 39mm; }
+  .pk td.price { font-family: var(--FD); font-weight: 900; font-size: 15pt; line-height: 1; color: var(--ink); width: 23mm; white-space: nowrap; }
+  .pk td.avail { width: 16mm; color: var(--grey); font-size: 8.4pt; }
+  .pk tr.lead td.price, .pk tr.lead td.name { color: var(--red); }
+  .pk td .note { display: block; font-size: 8pt; color: var(--grey); margin-top: 0.8mm; }
+
+  .terms { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm; margin-top: 8mm; }
+  .term { border-top: 3px solid var(--red); padding-top: 3mm; }
+
+  /* Matrix */
+  .mx { font-size: 8pt; }
+  .mx th { font-size: 7pt; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); background: var(--ink); padding: 2.6mm 2mm; text-align: center; }
+  .mx th:first-child { text-align: left; }
+  .mx td { padding: 1.7mm 2mm; border-bottom: 1px solid var(--line); text-align: center; color: var(--body); }
+  .mx td:first-child { text-align: left; font-weight: 600; color: var(--ink); width: 35mm; }
+  .mx td.no { color: #B8BCC8; }
+
+  .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm 10mm; margin-top: 2mm; }
+  .fit div { padding: 2mm 0; border-top: 1px solid var(--line); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; }
+  .steps .d { font-family: var(--FD); font-weight: 900; font-size: 15pt; color: var(--ink); line-height: 1; margin-bottom: 1.5mm; text-transform: uppercase; }
+
+  .close { position: absolute; left: 0; right: 0; bottom: 0; background: var(--red); color: #fff; padding: 8mm 16mm 9mm 16mm;
+    display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 10mm; }
+  .close .wall { font-size: 28pt; color: #fff; }
+  .close .who { text-align: right; font-size: 9pt; line-height: 1.6; }
+  .close .who b { font-weight: 600; font-size: 10.5pt; }
+
+  .folio { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 6.8pt; color: var(--grey); letter-spacing: 0.06em; }
+  .p4 .rule { margin: 5mm 0; }
+  .p4 h2 { font-size: 26pt; margin-bottom: 4mm; }
+</style>
+</head>
+<body>
+
+<!-- 1. COVER -->
+<section class="page cover">
+  <img class="bg" src="../assets/photos/spitfire-flypast.jpg" alt="Spitfire FX-M Spirit of Kent in flight over Headcorn">
+  <div class="shade"></div>
+  <div class="top">
+    <div class="plate"><img src="../assets/hia-logo.png" alt="Headcorn International Airshow"></div>
+    <span>Partnership pack 2027</span>
+  </div>
+  <div class="foot">
+    <div class="eyebrow">25-27 June 2027 / Headcorn Aerodrome, Kent</div>
+    <h1>Put your name<span class="red">in the sky.</span></h1>
+    <p class="sub">Three days on a wartime fighter field. Spitfires, Mustangs and Hurricanes overhead, 10,000+ people on the grass, and a limited number of partners alongside them.</p>
+    <div class="meta">
+      <span><b>Fri 25 June</b> Futures &amp; Arrivals Day</span>
+      <span><b>Sat 26 &amp; Sun 27 June</b> Main show days</span>
+      <span>Photography: James Hill</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2. THE AUDIENCE -->
+<section class="page">
+  <div class="wallblock">
+    <div class="eyebrow">2026, one field in Kent</div>
+    <div class="wall">10,000+ on site.<br>30+ aircraft. 18 operators.<br><span class="red">4 Hurricanes</span> in one display.<br>20+ WWII veterans.</div>
+    <p class="after">Operators from four countries. An RAF Chinook for Armed Forces Day. Saudi and New Zealand defence attachés. All on the grass airfield that was RAF Lashenden, home of the USAAF 354th Fighter Group in 1944.</p>
+  </div>
+
+  <div class="pad">
+    <div class="cols">
+      <div>
+        <div class="eyebrow">Who comes</div>
+        <h3>Local, loyal and buying in advance</h3>
+        <p>Where 2026 general admission buyers live, from 2,994 orders:</p>
+        <div class="bars">
+          <div class="bar"><span>Kent</span><div class="track"><div class="fill k" style="width:61%"></div></div><b>61%</b></div>
+          <div class="bar"><span>East Sussex</span><div class="track"><div class="fill" style="width:10%"></div></div><b>10%</b></div>
+          <div class="bar"><span>Greater London</span><div class="track"><div class="fill" style="width:9%"></div></div><b>9%</b></div>
+          <div class="bar"><span>Medway</span><div class="track"><div class="fill" style="width:7%"></div></div><b>7%</b></div>
+        </div>
+        <p class="small" style="margin-top:3mm">Top postcode areas: TN 34%, ME 29%. Owned channels: Facebook ~6,000, newsletter ~5,000, Instagram ~1,600.</p>
+      </div>
+      <div>
+        <div class="eyebrow">The premium audience</div>
+        <h3>1,083 hospitality guests</h3>
+        <p>Across the Mustang Lounge and Fighter Row in 2026. The Mustang Lounge nearly sold out both days, at 267 and 262 of 300 places.</p>
+        <p>These are the people who plan early, spend more, and bring clients and family. Partners at enclosure level host alongside them.</p>
+        <h3 style="margin-top:4mm">2027: growing to around 10,500 attendance-days</h3>
+        <p>More international acts, a bigger media operation and a heavier final-month campaign. Partners signed by 31 March are on all of it.</p>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="eyebrow">Why partners come back</div>
+    <div class="reasons">
+      <div><div class="n">01</div><h3>A day out, not an ad break</h3><p>People stay six or seven hours. Your stand, your test drive, your recruitment team get time with them that a billboard never does.</p></div>
+      <div><div class="n">02</div><h3>A story worth being next to</h3><p>Veterans, heritage aircraft and a 1944 fighter base. Press and families treat it warmly, and so do your customers and staff.</p></div>
+      <div><div class="n">03</div><h3>Results in writing</h3><p>Every partner gets a post-show report in July: attendance, reach of your posts and newsletter features, photos of your activity.</p></div>
+    </div>
+  </div>
+
+  <div class="folio"><span>Headcorn International Airshow 2027</span><span>2</span></div>
+</section>
+
+<!-- 3. PACKAGES -->
+<section class="page">
+  <div class="strip">
+    <img src="../assets/photos/mustang-qi-close.jpg" alt="Polished nose of P-51 Mustang QI at Headcorn" style="object-position:50% 45%">
+    <span class="credit">P-51 Mustang QI, HIA 2026. Photo: James Hill</span>
+  </div>
+  <div class="pad" style="padding-top:11mm">
+    <div class="eyebrow">Packages</div>
+    <h2>One title partner.<br>A handful of the rest.</h2>
+
+    <table class="pk">
+      <thead><tr><th>Package</th><th>From (+VAT)</th><th>Available</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr class="lead"><td class="name">Title partner</td><td class="price">£15,000</td><td class="avail">1</td><td>"Headcorn International Airshow, presented by [you]" on every poster, ad and ticket. Prime site and 20 Mustang Lounge places a day.</td></tr>
+        <tr><td class="name">Mustang Lounge partner</td><td class="price">£7,500</td><td class="avail">1</td><td>The premium enclosure carries your name. 10 lounge places a day for clients or staff.</td></tr>
+        <tr><td class="name">Fighter Row partner</td><td class="price">£5,000</td><td class="avail">1</td><td>Naming of the crowdline enclosure, with a stand on the crowdline itself.</td></tr>
+        <tr><td class="name">Futures Day partner</td><td class="price">£5,000</td><td class="avail">1</td><td>Friday's veterans, schools and careers day. Built for engineering, aviation and defence employers who are hiring.</td></tr>
+        <tr><td class="name">Display partner</td><td class="price">£2,500</td><td class="avail">8</td><td>Your name on one aircraft's display: commentary credit, programme page and announcement post.<span class="note">Aircraft are allocated in signing order once the lineup is confirmed.</span></td></tr>
+        <tr><td class="name">Community supporter</td><td class="price">£750</td><td class="avail">20</td><td>Logo on the site banner, website and programme, plus 4 weekend tickets. Built for Kent businesses.</td></tr>
+        <tr><td class="name">Programme advert</td><td class="price">£300 / £500</td><td class="avail">20</td><td>Half or full page in the souvenir programme.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="terms">
+      <div class="term"><h3>Two-year partners</h3><p>Sign for 2027 and 2028 together and the 2028 fee stays at the 2027 price. First refusal on your package for 2029.</p></div>
+      <div class="term"><h3>Built to brief</h3><p>From £10,000. If none of these fit, we design one around your objective: a product launch, a recruitment push, a client weekend.</p></div>
+      <div class="term"><h3>In kind</h3><p>Transport, fuel, accommodation, print and radio count, valued at the package they replace. Beer and pleasure flights are taken.</p></div>
+    </div>
+  </div>
+  <div class="folio"><span>All prices exclude VAT. Hospitality places are per show day.</span><span>3</span></div>
+</section>
+
+<!-- 4. WHAT PARTNERS GET + NEXT STEPS -->
+<section class="page p4">
+  <div class="pad" style="padding-top:13mm">
+    <div class="eyebrow">What partners get</div>
+    <h2>Side by side.</h2>
+    <table class="mx">
+      <thead><tr><th></th><th>Title</th><th>Mustang Lounge</th><th>Fighter Row</th><th>Futures Day</th><th>Display</th><th>Community</th></tr></thead>
+      <tbody>
+        <tr><td>Name on</td><td>The show</td><td>Lounge</td><td>Fighter Row</td><td>Friday</td><td>One aircraft</td><td class="no">-</td></tr>
+        <tr><td>Hospitality per day</td><td>20 Mustang Lounge</td><td>10 Mustang Lounge</td><td>10 Fighter Row</td><td>10 on Friday</td><td>4 Fighter Row</td><td>4 GA tickets</td></tr>
+        <tr><td>Commentary mentions</td><td>Every hour</td><td>4 a day</td><td>4 a day</td><td>Friday</td><td>In its display</td><td class="no">-</td></tr>
+        <tr><td>Social posts</td><td>6</td><td>3</td><td>2</td><td>2</td><td>1</td><td class="no">-</td></tr>
+        <tr><td>Newsletter features</td><td>2</td><td>1</td><td>1</td><td>1</td><td>Mention</td><td class="no">-</td></tr>
+        <tr><td>Stand or space</td><td>Prime pitch</td><td>In the lounge</td><td>On the crowdline</td><td>Careers zone</td><td class="no">-</td><td class="no">-</td></tr>
+        <tr><td>Programme</td><td>Back cover</td><td>Full page</td><td>Full page</td><td>Full page</td><td>Aircraft credit</td><td>Logo</td></tr>
+        <tr><td>Post-show report</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+    <p class="small" style="margin-top:3mm">Every package includes a logo on the website, in the programme and on the on-site partner banner. Bring your own activity: sampling, test drives, demonstrations, recruitment stands.</p>
+
+    <hr class="rule">
+
+    <div class="eyebrow">Who it fits</div>
+    <div class="fit">
+      <div><h3>Engineering, aviation and defence</h3><p>Futures Day puts you in front of schools, cadets and career-changers, with veterans in the same tent.</p></div>
+      <div><h3>Cars, outdoor and leisure</h3><p>Display vehicles and test drives on a crowdline full of families with a day to spare.</p></div>
+      <div><h3>Professional services and finance</h3><p>A named enclosure and a block of hospitality places. A client day that doesn't feel like one.</p></div>
+      <div><h3>Kent businesses</h3><p>Community supporter and programme pages. Your name in front of 61% of the crowd that lives in the county.</p></div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="eyebrow">How it works</div>
+    <div class="steps">
+      <div><div class="d">Now</div><p>Call or email. We hold your package for 14 days while you decide.</p></div>
+      <div><div class="d">31 March</div><p>Sign by this date to be on posters, outdoor and the ticket page.</p></div>
+      <div><div class="d">Apr-June</div><p>Social posts, newsletter features and press go live. Programme closes in May.</p></div>
+      <div><div class="d">July</div><p>Your post-show report, with numbers and photos, plus first refusal for 2028.</p></div>
+    </div>
+  </div>
+
+  <div class="close">
+    <div class="wall">Packages go<br>in signing order.</div>
+    <div class="who">
+      <b>Alex Yates</b>, Event Director<br>
+      alex@headcornairshow.com<br>
+      +44 (0)7766 544 388<br>
+      headcornairshow.com
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
