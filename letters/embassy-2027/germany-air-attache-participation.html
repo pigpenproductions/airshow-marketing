@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>German Armed Forces Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --gold: #b08d3c; --gold-soft: #d9c08a; --ink: #1d1d1f; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #fff; }
+  .page {
+    width: 210mm; height: 297mm; position: relative; overflow: hidden;
+    padding: 15mm 24mm 18mm; color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif; font-size: 11.8pt; line-height: 1.42; font-variant-numeric: lining-nums;
+  }
+  .frame { position: absolute; inset: 9mm; border: 0.6pt solid var(--gold-soft); pointer-events: none; }
+  .frame::after { content: ""; position: absolute; inset: 1.6mm; border: 0.3pt solid var(--gold-soft); }
+  header { text-align: center; }
+  header img { width: 30mm; display: block; margin: 0 auto 2.5mm; }
+  .wordmark { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 7.5pt; letter-spacing: 0.32em; color: var(--gold); text-transform: uppercase; }
+  .rule { width: 44mm; height: 0.6pt; background: var(--gold); margin: 3mm auto 6mm; }
+  .meta { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6mm; }
+  .addr { line-height: 1.35; }
+  .date { text-align: right; white-space: nowrap; }
+  .subject { font-weight: 600; letter-spacing: 0.02em; margin: 0 0 4mm; }
+  p { margin: 0 0 3.4mm; text-align: justify; hyphens: manual; }
+  .details { margin: 3mm 0 4mm; border-top: 0.6pt solid var(--gold-soft); border-bottom: 0.6pt solid var(--gold-soft); padding: 3mm 0; }
+  .details table { width: 100%; border-collapse: collapse; font-size: 11.2pt; }
+  .details td { padding: 0.8mm 0; vertical-align: top; }
+  .details td:first-child { width: 42mm; font-family: 'Montserrat', sans-serif; font-size: 7.4pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); padding-top: 1.9mm; }
+  .sign { margin-top: 3mm; }
+  .sign .space { height: 19mm; position: relative; }
+  .sign .space img { position: absolute; left: -3mm; bottom: 0.6mm; width: 68mm; }
+  .sign strong { font-weight: 600; }
+  footer { position: absolute; left: 0; right: 0; bottom: 13mm; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 7pt; letter-spacing: 0.14em; color: var(--gold); }
+  footer span { margin: 0 2.5mm; }
+
+  .page { font-size: 11.4pt; }
+  .cc { font-size: 10pt; font-style: italic; margin-top: 3mm; text-align: left; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="frame"></div>
+
+  <header>
+    <img src="../hia-logo-gold.png" alt="Headcorn International Airshow">
+    <div class="wordmark">Headcorn International Airshow &middot; 2027</div>
+    <div class="rule"></div>
+  </header>
+
+  <div class="meta">
+    <div class="addr">
+      Colonel Stefan Udo Kleinheyer<br>
+      Air Attaché<br>
+      Embassy of the Federal Republic of Germany<br>
+      23 Belgrave Square<br>
+      London SW1X 8PZ
+    </div>
+    <div class="date">26 November 2026</div>
+  </div>
+
+  <p>Dear Colonel Kleinheyer,</p>
+
+  <p class="subject">Formal Invitation: Headcorn International Airshow, 26–27 June 2027</p>
+
+  <p>On behalf of the Headcorn International Airshow, I have the honour of formally inviting the German Armed Forces to take part in our 2027 show on Saturday 26 and Sunday 27 June at Headcorn Aerodrome, Kent, in the United Kingdom. I would be grateful if you would forward it to the appropriate offices.</p>
+
+  <p>A flypast by one of the German Navy’s new P-8A Poseidon maritime patrol aircraft, or by a Luftwaffe A400M, would give our audience a rare view of these aircraft, and we would equally welcome a helicopter for static display. We will support all operational, logistical and hospitality requirements, and would be honoured to welcome you as our guest.</p>
+
+  <div class="details">
+    <table>
+      <tr><td>Show days</td><td>Saturday 26 and Sunday 27 June 2027</td></tr>
+      <tr><td>Arrivals</td><td>Futures &amp; Arrivals Day, Friday 25 June 2027</td></tr>
+      <tr><td>Venue</td><td>Headcorn Aerodrome, Headcorn, Kent, United Kingdom</td></tr>
+      <tr><td>Hospitality</td><td>VIP hospitality on either or both show days, with the opportunity to meet crews on the flightline</td></tr>
+      <tr><td>2026 in brief</td><td>More than 10,000 visitors across the weekend, and more than 30 aircraft from 18 operators in four countries</td></tr>
+    </table>
+  </div>
+
+  <p>I would be glad to provide anything further your approvals process requires, and I look forward to hearing from you.</p>
+
+  <div class="sign">
+    Yours sincerely,
+    <div class="space"><img src="../signature-alexander-yates.png" alt="Signature of Alexander Yates"></div>
+    <strong>Alexander Yates</strong><br>
+    Event Director, Headcorn International Airshow
+  </div>
+
+  <footer>
+    <span>alex@headcornairshow.com</span>&middot;<span>+44 (0)7766 544 388</span>&middot;<span>www.headcornairshow.com</span>
+  </footer>
+</div>
+</body>
+</html>
