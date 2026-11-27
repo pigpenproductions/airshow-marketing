@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Zoho_Mail__ZohoMCP_listProducts",
+      "mcp__Zoho_Mail__ZohoMCP_getFeatures",
+      "mcp__Zoho_Mail__ZohoMCP_listTools",
+      "mcp__Zoho_Mail__ZohoMCP_getSchema",
+      "mcp__Zoho_Mail__ZohoMCP_executeTool"
+    ]
+  }
+}
