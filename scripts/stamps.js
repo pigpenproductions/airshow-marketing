@@ -6,6 +6,10 @@
 //   declassified-<colour>.png        no file number
 //   declassified-<colour>-01..08.png "AIRCRAFT 01" ... for each reveal
 //   classified-<colour>.png          for teasers before a reveal
+//   flying-static-<colour>.png       aircraft that fly AND sit on static
+//   flying-static-first-<colour>.png same, "FIRST AT HEADCORN SINCE 1944" (P-47)
+//
+//   node scripts/stamps.js flying    renders only the flying-static stamps
 //   example-teaser.jpg / example-reveal.jpg  how they sit on a 1080x1350 post
 
 const fs = require('fs');
@@ -21,7 +25,7 @@ const COLOURS = { red: '#D40F0F', white: '#F4F5F8', navy: '#0A1543' };
 // The stamp is an SVG: a double border, a top line, the big word and a bottom
 // line, tilted, with an ink filter that roughens the edges and knocks out
 // specks so it reads as a real rubber stamp rather than clean type.
-function stampSvg({ word, top, bottom, colour, seed = 3 }) {
+function stampSvg({ word, top, bottom, colour, seed = 3, tilt = -7 }) {
   return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="2200" height="1040">
   <defs>
@@ -36,7 +40,7 @@ function stampSvg({ word, top, bottom, colour, seed = 3 }) {
       <feComposite in="speckled" in2="blotMask" operator="in"/>
     </filter>
   </defs>
-  <g transform="rotate(-7 550 260)" filter="url(#ink)" fill="${colour}" stroke="${colour}">
+  <g transform="rotate(${tilt} 550 260)" filter="url(#ink)" fill="${colour}" stroke="${colour}">
     <rect x="60" y="80" width="980" height="360" rx="22" fill="none" stroke-width="16"/>
     <rect x="84" y="104" width="932" height="312" rx="12" fill="none" stroke-width="5"/>
     <text x="550" y="162" text-anchor="middle" stroke="none"
@@ -103,6 +107,19 @@ async function renderExample(page, { photo, stamp, blur, label, name, file }) {
   const page = await browser.newPage();
   const top = 'HEADCORN INTERNATIONAL AIRSHOW';
   let n = 0;
+  // Flying + static: tilted the other way to DECLASSIFIED so the two never
+  // look copy-pasted when they share a post.
+  for (const [name, colour] of Object.entries(COLOURS)) {
+    await renderStamp(page, { word: 'FLYING + STATIC', top, bottom: 'HIA27 · IN THE AIR · ON THE GROUND', colour, seed: 17, tilt: 6 }, path.join(OUT, `flying-static-${name}.png`));
+    await renderStamp(page, { word: 'FLYING + STATIC', top, bottom: 'HIA27 · FIRST AT HEADCORN SINCE 1944', colour, seed: 19, tilt: 6 }, path.join(OUT, `flying-static-first-${name}.png`));
+    n += 2;
+  }
+  if (process.argv[2] === 'flying') {
+    fs.unlinkSync(path.join(OUT, '.blank.html'));
+    await browser.close();
+    console.log(`${n} stamps in ${OUT}`);
+    return;
+  }
   for (const [name, colour] of Object.entries(COLOURS)) {
     await renderStamp(page, { word: 'DECLASSIFIED', top, bottom: 'HIA27 · CLEARED FOR RELEASE', colour }, path.join(OUT, `declassified-${name}.png`));
     await renderStamp(page, { word: 'CLASSIFIED', top, bottom: 'HIA27 · EYES ONLY', colour, seed: 5 }, path.join(OUT, `classified-${name}.png`));
