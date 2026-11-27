@@ -21,13 +21,17 @@ const OUT = path.join(ROOT, 'assets', 'stamps');
 const FONTS =
   '<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">';
 const COLOURS = { red: '#D40F0F', white: '#F4F5F8', navy: '#0A1543' };
+// Flying + static also comes in yellow, so it stands apart from the red DECLASSIFIED.
+const FLYING_COLOURS = { ...COLOURS, yellow: '#FFC20E' };
 
 // The stamp is an SVG: a double border, a top line, the big word and a bottom
 // line, tilted, with an ink filter that roughens the edges and knocks out
 // specks so it reads as a real rubber stamp rather than clean type.
-function stampSvg({ word, top, bottom, colour, seed = 3, tilt = -7 }) {
+function stampSvg({ word, top, bottom, colour, seed = 3, tilt = -7, shadow = false }) {
+  // Light inks (yellow) get a soft navy shadow so they survive a pale sky.
+  const style = shadow ? ' style="filter:drop-shadow(0 4px 3px rgba(10,21,67,.75)) drop-shadow(0 0 10px rgba(10,21,67,.45))"' : '';
   return `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="2200" height="1040">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="2200" height="1040"${style}>
   <defs>
     <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
       <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="${seed}" result="warp"/>
@@ -109,9 +113,9 @@ async function renderExample(page, { photo, stamp, blur, label, name, file }) {
   let n = 0;
   // Flying + static: tilted the other way to DECLASSIFIED so the two never
   // look copy-pasted when they share a post.
-  for (const [name, colour] of Object.entries(COLOURS)) {
-    await renderStamp(page, { word: 'FLYING + STATIC', top, bottom: 'HIA27 · IN THE AIR · ON THE GROUND', colour, seed: 17, tilt: 6 }, path.join(OUT, `flying-static-${name}.png`));
-    await renderStamp(page, { word: 'FLYING + STATIC', top, bottom: 'HIA27 · FIRST AT HEADCORN SINCE 1944', colour, seed: 19, tilt: 6 }, path.join(OUT, `flying-static-first-${name}.png`));
+  for (const [name, colour] of Object.entries(FLYING_COLOURS)) {
+    await renderStamp(page, { word: 'FLYING + STATIC', top, bottom: 'HIA27 · IN THE AIR · ON THE GROUND', colour, seed: 17, tilt: 6, shadow: name === 'yellow' }, path.join(OUT, `flying-static-${name}.png`));
+    await renderStamp(page, { word: 'FLYING + STATIC', top, bottom: 'HIA27 · FIRST AT HEADCORN SINCE 1944', colour, seed: 19, tilt: 6, shadow: name === 'yellow' }, path.join(OUT, `flying-static-first-${name}.png`));
     n += 2;
   }
   if (process.argv[2] === 'flying') {
