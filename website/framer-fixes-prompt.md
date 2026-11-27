@@ -55,7 +55,7 @@ On /confirmed-aircraft:
 ## PROMPT 3: FAQ (/faq) - wrong answers and a duplicate
 
 1. The question "What happens if the weather is bad?" appears twice. Delete the second one and its answer.
-2. Replace the answer to "What facilities are there for toilets & baby change?" with: "There are toilets on site, including accessible toilets and baby change." [CONFIRM before publishing.]
+2. Replace the answer to "What facilities are there for toilets & baby change?" with: "Yes. There are toilets and baby change facilities on site."
 3. Replace the answer to "Will I get to meet any pilots/ aircraft up close?" with: "The ground show has static aircraft you can see up close. Fighter Row seats put you on the flightline as the aircraft start up and taxi." Change the question to "Can I see the aircraft up close?"
 4. Change "the Headcorn Aerodrome Airshow" in the intro to "the Headcorn International Airshow".
 
@@ -78,7 +78,6 @@ The Fighter Row description has been pasted into two other cards. Fix only these
 
 - **Futures price in the structured data.** The homepage and /tickets code says Futures Day costs 7.50. Change `"price": "7.50"` to `"price": "10.00"` in Site Settings > Custom Code. Google shows this price in search results, so it must match.
 - **/news-updates is empty.** The page has no content. Either connect it to the aircraft updates CMS collection or remove it from the nav and sitemap until the first 2027 announcement. Don't spend AI credits on it.
-- **Toilet facilities.** Confirm the FAQ answer in Prompt 3 is true before publishing.
 - **Two ticket shops.** /tickets links to both Ticketflex and Weeztix. Check each BOOK button goes to the right shop for that product.
 
 ## Check before you publish
