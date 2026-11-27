@@ -22,6 +22,8 @@ Text fixes only. No layout, no effects, no new sections. That keeps each prompt 
 
 You are editing text on headcornairshow.com, the Headcorn International Airshow website, in Framer. Change text only. Do not change layout, styles, images, links, navigation or the footer. Do not add sections. Do not invent facts.
 
+Breakpoints: this site has Desktop, Tablet and Phone breakpoints. Text that looks duplicated is usually the same text on another breakpoint. Never delete a text layer or a section. Make every change on all three breakpoints.
+
 Facts. Use these exactly:
 - Show: Saturday 26 and Sunday 27 June 2027, Headcorn Aerodrome, Kent.
 - Futures & Arrivals Day: Friday 25 June 2027. £10. Free for schoolchildren and veterans.
@@ -38,9 +40,9 @@ Voice: British English. Short, plain sentences. Hyphens only, never em dashes.
 1. Replace every date on this page with "Friday 25 June 2027". This includes the two FAQ answers that say "Friday, 26 June 2025" and "Friday, 26 June 2026", and the paragraph that says "Friday 26 June 2025".
 2. Replace every "Schools & Seniors Day" with "Futures & Arrivals Day".
 3. Replace "£7.50" with "£10" wherever it appears, including the line "tickets are available for just £7.50".
-4. The intro paragraph appears twice. Delete the second copy (the one starting "Join us on Friday 26 June 2025").
+4. The intro text exists once per breakpoint. Make it identical on Desktop, Tablet and Phone. Do not delete any copy of it.
 5. In the remaining paragraph, change "local schoolchildren, and veterans" to "local schoolchildren and veterans". Remove "senior citizens" wherever it appears.
-6. The FAQ "When is the Schools & Seniors Day?" appears twice. Keep one, titled "When is Futures & Arrivals Day?", with the answer: "Friday 25 June 2027, the day before the main airshow weekend."
+6. On every breakpoint, change the FAQ "When is the Schools & Seniors Day?" to "When is Futures & Arrivals Day?", with the answer: "Friday 25 June 2027, the day before the main airshow weekend." Do not delete any FAQ item.
 7. Fix "an memorable" to "a memorable", "activites" to "activities" and "Airshow Airshow" to "Airshow".
 
 ## PROMPT 2: Parking (/parking) and Aircraft (/confirmed-aircraft) - placeholders
@@ -54,7 +56,7 @@ On /confirmed-aircraft:
 
 ## PROMPT 3: FAQ (/faq) - wrong answers and a duplicate
 
-1. The question "What happens if the weather is bad?" appears twice. Delete the second one and its answer.
+1. Check the Desktop breakpoint first. If "What happens if the weather is bad?" appears twice in the same list, delete the second one and its answer. Then do the same on Tablet and Phone. If it appears only once per breakpoint, leave it.
 2. Replace the answer to "What facilities are there for toilets & baby change?" with: "Yes. There are toilets and baby change facilities on site."
 3. Replace the answer to "Will I get to meet any pilots/ aircraft up close?" with: "The ground show has static aircraft you can see up close. Fighter Row seats put you on the flightline as the aircraft start up and taxi." Change the question to "Can I see the aircraft up close?"
 4. Change "the Headcorn Aerodrome Airshow" in the intro to "the Headcorn International Airshow".
